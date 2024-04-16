@@ -411,7 +411,7 @@
                         </a>
                     </li>
                     <li class="side-nav-item">
-                        <a href="carga-saldos" class="side-nav-link">
+                        <a href="gacf-carga-saldos" class="side-nav-link">
                             <i class="ri-contacts-book-upload-line"></i>
                             <span> Carga de Saldos Iniciales</span>
                         </a>
@@ -433,10 +433,10 @@
                                     <div class="collapse" id="sidebarSecondLevel">
                                         <ul class="side-nav-third-level">
                                             <li>
-                                                <a href="carga-epigrafes">Carga de Epígrafes</a>
+                                                <a href="gacf-carga-epigrafes">Carga de Epígrafes</a>
                                             </li>
                                             <li>
-                                                <a href="gestion-epigrafes">Gestión de Epígrafes</a>
+                                                <a href="gacf-gestion-epigrafes">Gestión de Epígrafes</a>
                                             </li>
                                         </ul>
                                     </div>
