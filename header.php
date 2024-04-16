@@ -9,28 +9,28 @@
     <meta content="Coderthemes" name="author" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="/gacf-web-mexico/assets/images/favicon.ico">
     <!-- Daterangepicker css -->
-    <link rel="stylesheet" href="assets/vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="/gacf-web-mexico/assets/vendor/daterangepicker/daterangepicker.css">
     <!-- Vector Map css -->
-    <link rel="stylesheet" href="assets/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css">
+    <link rel="stylesheet" href="/gacf-web-mexico/assets/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css">
     <!-- Theme Config Js -->
-    <script src="assets/js/config.js"></script>
-    <script src="assets/js/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/gacf-web-mexico/assets/js/config.js"></script>
+    <script src="/gacf-web-mexico/assets/js/jquery/jquery-3.5.1.min.js"></script>
     <!-- Select2 css -->
-    <link href="assets/vendor/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="/gacf-web-mexico/assets/vendor/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
     <!-- Datatables css -->
-    <link href="assets/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/vendor/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/vendor/datatables.net-fixedcolumns-bs5/css/fixedColumns.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/vendor/datatables.net-fixedheader-bs5/css/fixedHeader.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/vendor/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/vendor/datatables.net-select-bs5/css/select.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+    <link href="/gacf-web-mexico/assets/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+    <link href="/gacf-web-mexico/assets/vendor/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+    <link href="/gacf-web-mexico/assets/vendor/datatables.net-fixedcolumns-bs5/css/fixedColumns.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+    <link href="/gacf-web-mexico/assets/vendor/datatables.net-fixedheader-bs5/css/fixedHeader.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+    <link href="/gacf-web-mexico/assets/vendor/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+    <link href="/gacf-web-mexico/assets/vendor/datatables.net-select-bs5/css/select.bootstrap5.min.css" rel="stylesheet" type="text/css" />
 
     <!-- App css -->
-    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+    <link href="/gacf-web-mexico/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
     <!-- Icons css -->
-    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="/gacf-web-mexico/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -48,19 +48,19 @@
                         <!-- Logo light -->
                         <a href="inicio" class="logo-light">
                             <span class="logo-lg">
-                                <img src="assets/images/login_logo_v2.png" alt="logo">
+                                <img src="/gacf-web-mexico/assets/images/login_logo_v2.png" alt="logo">
                             </span>
                             <span class="logo-sm">
-                                <img src="assets/images/logo_icon.png" alt="small logo">
+                                <img src="/gacf-web-mexico/assets/images/logo_icon.png" alt="small logo">
                             </span>
                         </a>
                         <!-- Logo Dark -->
                         <a href="inicio" class="logo-dark">
                             <span class="logo-lg">
-                                <img src="assets/images/login_logo.png" alt="dark logo">
+                                <img src="/gacf-web-mexico/assets/images/login_logo.png" alt="dark logo">
                             </span>
                             <span class="logo-sm">
-                                <img src="assets/images/logo_icon.png" alt="small logo">
+                                <img src="/gacf-web-mexico/assets/images/logo_icon.png" alt="small logo">
                             </span>
                         </a>
                     </div>
@@ -121,7 +121,7 @@
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <div class="d-flex">
-                                        <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-2.jpg" alt="Generic placeholder image" height="32">
+                                        <img class="d-flex me-2 rounded-circle" src="/gacf-web-mexico/assets/images/users/avatar-2.jpg" alt="Generic placeholder image" height="32">
                                         <div class="w-100">
                                             <h5 class="m-0 fs-14">Erwin Brown</h5>
                                             <span class="fs-12 mb-0">UI Designer</span>
@@ -132,7 +132,7 @@
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <div class="d-flex">
-                                        <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-5.jpg" alt="Generic placeholder image" height="32">
+                                        <img class="d-flex me-2 rounded-circle" src="/gacf-web-mexico/assets/images/users/avatar-5.jpg" alt="Generic placeholder image" height="32">
                                         <div class="w-100">
                                             <h5 class="m-0 fs-14">Jacob Deo</h5>
                                             <span class="fs-12 mb-0">Developer</span>
@@ -222,7 +222,7 @@
                                         <div class="d-flex align-items-center">
                                             <div class="flex-shrink-0">
                                                 <div class="notify-icon">
-                                                    <img src="assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt="" />
+                                                    <img src="/gacf-web-mexico/assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt="" />
                                                 </div>
                                             </div>
                                             <div class="flex-grow-1 text-truncate ms-2">
@@ -258,7 +258,7 @@
                                         <div class="d-flex align-items-center">
                                             <div class="flex-shrink-0">
                                                 <div class="notify-icon">
-                                                    <img src="assets/images/users/avatar-4.jpg" class="img-fluid rounded-circle" alt="" />
+                                                    <img src="/gacf-web-mexico/assets/images/users/avatar-4.jpg" class="img-fluid rounded-circle" alt="" />
                                                 </div>
                                             </div>
                                             <div class="flex-grow-1 text-truncate ms-2">
@@ -299,7 +299,7 @@
                     <li class="dropdown me-md-2">
                         <a class="nav-link dropdown-toggle arrow-none nav-user px-2" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                             <span class="account-user-avatar">
-                                <img src="assets/images/users/avatar-1.jpg" alt="user-image" width="32" class="rounded-circle">
+                                <img src="/gacf-web-mexico/assets/images/users/avatar-1.jpg" alt="user-image" width="32" class="rounded-circle">
                             </span>
                             <span class="d-lg-flex flex-column gap-1 d-none">
                                 <h5 class="my-0">Doris Larson</h5>
@@ -355,19 +355,19 @@
             <!-- Brand Logo Light -->
             <a href="inicio" class="logo logo-light">
                 <span class="logo-lg">
-                    <img src="assets/images/login_logo_v2.png" alt="logo">
+                    <img src="/gacf-web-mexico/assets/images/login_logo_v2.png" alt="logo">
                 </span>
                 <span class="logo-sm">
-                    <img src="assets/images/logo_icon.png" alt="small logo">
+                    <img src="/gacf-web-mexico/assets/images/logo_icon.png" alt="small logo">
                 </span>
             </a>
             <!-- Brand Logo Dark -->
             <a href="inicio" class="logo logo-dark">
                 <span class="logo-lg">
-                    <img src="assets/images/login_logo.png" alt="dark logo">
+                    <img src="/gacf-web-mexico/assets/images/login_logo.png" alt="dark logo">
                 </span>
                 <span class="logo-sm">
-                    <img src="assets/images/logo_icon.png" alt="small logo">
+                    <img src="/gacf-web-mexico/assets/images/logo_icon.png" alt="small logo">
                 </span>
             </a>
 
@@ -387,7 +387,7 @@
                 <div class="leftbar-user p-3 text-white">
                     <a href="perfil" class="d-flex align-items-center text-reset">
                         <div class="flex-shrink-0">
-                            <img src="assets/images/users/avatar-1.jpg" alt="user-image" height="42" class="rounded-circle shadow">
+                            <img src="/gacf-web-mexico/assets/images/users/avatar-1.jpg" alt="user-image" height="42" class="rounded-circle shadow">
                         </div>
                         <div class="flex-grow-1 ms-2">
                             <span class="fw-semibold fs-15 d-block">Doris Larson</span>
