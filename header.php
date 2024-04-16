@@ -406,44 +406,45 @@
 
                     <li class="side-nav-item">
                         <a href="inicio" class="side-nav-link">
-                            <i class="ri-dashboard-2-fill"></i>
+                            <i class="bi bi-clipboard-data"></i>
                             <span> Dashboard </span>
                         </a>
                     </li>
+
                     <li class="side-nav-item">
-                        <a href="gacf-carga-saldos" class="side-nav-link">
-                            <i class="ri-contacts-book-upload-line"></i>
-                            <span> Carga de Saldos Iniciales</span>
-                        </a>
-                    </li>
-                    <li class="side-nav-item">
-                        <a data-bs-toggle="collapse" href="#sidebarMultiLevel" aria-expanded="false" aria-controls="sidebarMultiLevel" class="side-nav-link">
-                            <i class="bi bi-sliders"></i>
-                            <span> Panel de Control</span>
+                        <a data-bs-toggle="collapse" href="#sidebarPPTO" aria-expanded="false" aria-controls="sidebarPPTO" class="side-nav-link">
+                            <i class="bi bi-building-check"></i>
+                            <span> Presupuesto </span>
                             <span class="menu-arrow"></span>
                         </a>
-                        <div class="collapse" id="sidebarMultiLevel">
+                        <div class="collapse" id="sidebarPPTO">
                             <ul class="side-nav-second-level">
-                                <li class="side-nav-item">
-                                    <a data-bs-toggle="collapse" href="#sidebarSecondLevel" aria-expanded="false" aria-controls="sidebarSecondLevel">
-                                        <i class="bi bi-shop-window"></i>
-                                        <span> Marketing</span>
-                                        <span class="menu-arrow"></span>
-                                    </a>
-                                    <div class="collapse" id="sidebarSecondLevel">
-                                        <ul class="side-nav-third-level">
-                                            <li>
-                                                <a href="gacf-carga-epigrafes">Carga de Epígrafes</a>
-                                            </li>
-                                            <li>
-                                                <a href="gacf-gestion-epigrafes">Gestión de Epígrafes</a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                <li>
+                                    <a href="carga-saldos">Carga de Saldos Iniciales</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
+
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#sidebarPanelC" aria-expanded="false" aria-controls="sidebarPanelC" class="side-nav-link">
+                            <i class="bi bi-sliders"></i>
+                            <span> Panel de Control</span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="sidebarPanelC">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="carga-epigrafes">Carga de Epígrafes</a>
+                                </li>
+                                <li>
+                                    <a href="gestion-epigrafes">Gestión de Epígrafes</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+
                 </ul>
                 <!--- End Sidemenu -->
 
