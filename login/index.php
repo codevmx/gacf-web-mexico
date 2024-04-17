@@ -9,16 +9,16 @@
     <meta content="Coderthemes" name="author" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="../assets/images/favicon.ico">
+    <link rel="shortcut icon" href="/gacf-web-mexico/assets/images/favicon.ico">
     <!-- Theme Config Js -->
-    <script src="../assets/js/config.js"></script>
+    <script src="/gacf-web-mexico/assets/js/config.js"></script>
     <!-- App css -->
-    <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+    <link href="/gacf-web-mexico/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
     <!-- Icons css -->
-    <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="/gacf-web-mexico/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
 
-    <script src="../assets/js/jquery/jquery-3.5.1.min.js"></script>
-    <script src="js/login.js"></script>
+    <script src="/gacf-web-mexico/assets/js/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/gacf-web-mexico/login/js/login.js"></script>
 </head>
 
 <body class="authentication-bg position-relative">
@@ -58,10 +58,10 @@
                         <div class="card-header pt-4 text-center">
                             <div class="auth-brand mb-0">
                                 <a href="index.html" class="logo-dark">
-                                    <span><img src="../assets/images/login_logo.png" alt="dark logo" height="28"></span>
+                                    <span><img src="/gacf-web-mexico/assets/images/login_logo.png" alt="dark logo" height="28"></span>
                                 </a>
                                 <a href="index.html" class="logo-light">
-                                    <span><img src="../assets/images/login_logo_v2.png" alt="logo" height="28"></span>
+                                    <span><img src="/gacf-web-mexico/assets/images/login_logo_v2.png" alt="logo" height="28"></span>
                                 </a>
                             </div>                            
                             <p class="text-muted mb-1">Portal de Gestión Administrativa, Contable y Financiera.</p>
@@ -70,7 +70,7 @@
                         <div class="card-body">
 
                             <div class="text-center w-75 m-auto">
-                                <img src="../assets/images/users/avatar-0.png" alt="image" class="rounded-circle avatar-md img-thumbnail">
+                                <img src="/gacf-web-mexico/assets/images/users/avatar-0.png" alt="image" class="rounded-circle avatar-md img-thumbnail">
                                 <!-- <div class="spinner-load"></div> -->
                            </div>
                                
@@ -138,9 +138,9 @@
     </footer>
 
     <!-- Vendor js -->
-    <script src="../assets/js/vendor.min.js"></script>
+    <script src="/gacf-web-mexico/assets/js/vendor.min.js"></script>
     <!-- App js -->
-    <script src="../assets/js/app.min.js"></script>
+    <script src="/gacf-web-mexico/assets/js/app.min.js"></script>
 
 </body>
 
