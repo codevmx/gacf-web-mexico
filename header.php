@@ -420,7 +420,7 @@
                         <div class="collapse" id="sidebarPPTO">
                             <ul class="side-nav-second-level">
                                 <li>
-                                    <a href="carga-saldos">Carga de Saldos Iniciales</a>
+                                    <a href="gacf-carga-saldos">Carga de Saldos Iniciales</a>
                                 </li>
                             </ul>
                         </div>
@@ -435,10 +435,10 @@
                         <div class="collapse" id="sidebarPanelC">
                             <ul class="side-nav-second-level">
                                 <li>
-                                    <a href="carga-epigrafes">Carga de Epígrafes</a>
+                                    <a href="gacf-gestion-epigrafes">Carga de Epígrafes</a>
                                 </li>
                                 <li>
-                                    <a href="gestion-epigrafes">Gestión de Epígrafes</a>
+                                    <a href="gacf-carga-epigrafes">Gestión de Epígrafes</a>
                                 </li>
                             </ul>
                         </div>
