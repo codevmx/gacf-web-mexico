@@ -779,7 +779,7 @@ progress {
 .container-sm,
 .container-xl,
 .container-xxl {
-  --ct-gutter-x: 0.6rem;
+  --ct-gutter-x: 2.6rem;
   --ct-gutter-y: 0;
   width: 100%;
   padding-right: calc(var(--ct-gutter-x) * 0.5);
@@ -20280,3 +20280,33 @@ span.flatpickr-weekday {
   border-radius: 0 4px 4px 0 !important;
 }
 /*# sourceMappingURL=app.min.css.map */
+.spinner-load {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  border: 4px solid #0000;
+  border-radius: 50%;
+  border-right-color: #004dff;
+  animation: spinner-load-a4dj62 1s infinite linear;
+}
+
+.spinner-load::before,
+.spinner-load::after {
+  content: "";
+  grid-area: 1/1;
+  margin: 2px;
+  border: inherit;
+  border-radius: 50%;
+  animation: spinner-load-a4dj62 2s infinite;
+}
+
+.spinner-load::after {
+  margin: 8px;
+  animation-duration: 3s;
+}
+
+@keyframes spinner-load-a4dj62 {
+  100% {
+      transform: rotate(1turn);
+  }
+}
