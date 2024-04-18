@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     $("#btn-signin").append('<i class="bi bi-arrow-right-circle" id="icon-circle"></i>');
-    $("#BtnIniciar").click(FnLogin);
+    $("#btn-signin").click(FnLogin);
 
 });
 
