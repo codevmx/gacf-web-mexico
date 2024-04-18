@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    FnNotificacion('Pruebas', 'error');
+
     $("#inputCuenta").select2({
         dropdownParent: $('#modalAgregarEpigrafe'),
         language: {
@@ -102,6 +104,7 @@ function CrearEpigrafes() {
             FnNotificacion(msj, alerta);
             $('#formCrearepig')[0].reset();
             $('#inputCuenta').val(null).trigger('change');
+            $("#datatables-gestionEpigrafes").DataTable().ajax.reload();
 
         }
 

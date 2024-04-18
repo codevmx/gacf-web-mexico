@@ -1,7 +1,7 @@
 <?php
 
-include ("../../../conexion/conexion.php");
-include ("../../../conexion/conexionODBC.php");
+include ("../../conexion/conexion.php");
+include ("../../conexion/conexionODBC.php");
 
 $acc = $_GET['accion'];
 

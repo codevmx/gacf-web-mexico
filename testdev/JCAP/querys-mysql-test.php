@@ -6,8 +6,8 @@ echo "<pre>";
 print_r($_SESSION);
 echo "</pre>";
 
-// $sql 	= "SELECT * FROM users LIMIT 10";
-// $query 	= db_select($sql);
+$sql 	= "INSERT INTO tb_mkt_epigrafes (cuentatg,cuentajde,epigrafe,clave,desgasto,motgasto)VALUES('00005','00005','pp','pp','pp','pp')";
+$query 	= db_query($sql);
 
 // echo "<pre>";
 
