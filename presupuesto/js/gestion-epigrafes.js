@@ -1,7 +1,5 @@
 $(document).ready(function () {
 
-    FnNotificacion('Pruebas', 'error');
-
     $("#inputCuenta").select2({
         dropdownParent: $('#modalAgregarEpigrafe'),
         language: {
