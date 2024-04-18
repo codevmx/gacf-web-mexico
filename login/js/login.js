@@ -10,7 +10,7 @@ function FnLogin(){
         data: $("#signupForm").serialize(),
         type: "POST",
         dataType: "html",
-        url: "pgm/login_pgm.php",
+        url: "pgm/login-pgm.php",
         beforeSend: function() {
             $("#icon-circle").remove();
             $("#btn-signin").addClass("disabled");
@@ -22,8 +22,8 @@ function FnLogin(){
             msj      = json.msj;
             perfil   = json.perfil;
 
-            if (msj == '5') {					
-                //Error con username
+            if (msj == '4') {					
+                //Error por permisos
                 $("#resultado").html('<div class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error!</strong> &nbsp;El usuario ingresado no tiene permisos de acceso, verifíquelo con su administrador.</div>');
             } else if (msj == '3') {					
                 //Error con username
