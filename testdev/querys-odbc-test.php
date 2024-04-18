@@ -1,11 +1,11 @@
 <?php
-include("/gacf-web-mexico/conexion/conexionODBC.php");
+require_once("../conexion/conexionODBC.php");
 ini_set("max_execution_time", "500000");
 
 // echo "<pre>";
 // print_r($_SESSION);
 // echo "</pre>";
-echo db_conectODBC();
+
 $sql = "SELECT * FROM RESCON";
 
 echo "<pre>";
@@ -32,7 +32,7 @@ foreach ($query as $key => $value) {
 
 	echo $i."|";
 	foreach ($value as $key1 => $valor) {
-		echo utf8_encode(trim($valor))."|";
+		echo trim($valor)."|";
 	}
 	$i++;
 	echo "<br>";

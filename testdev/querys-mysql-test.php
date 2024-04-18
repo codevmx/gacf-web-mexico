@@ -1,46 +1,49 @@
 <?php
-include("../conexion/conexion.php");
-ini_set("max_execution_time", "500000");
+//include("../conexion/conexion.php");
+
 
 // echo "<pre>";
 // print_r($_SESSION);
 // echo "</pre>";
 
-$sql = "SELECT * FROM users LIMIT 10";
-
-echo "<pre>";
-print_r($sql);
-echo "</pre>";
-
-$query = db_select($sql);
+// $sql 	= "SELECT * FROM users LIMIT 10";
+// $query 	= db_select($sql);
 
 
-echo "<pre>";
-//print_r($query[1]['BXCVPR']);
-echo 'Numero de registros = '.count($query);
-echo '<br>En caso de error = '.db_error();
-//print_r($query);
-echo "</pre>";
+// echo "<pre>";
+// //print_r($query[1]['BXCVPR']);
+// echo 'Numero de registros = '.count($query);
+// echo '<br>En caso de error = '.db_error();
+// //print_r($query);
+// echo "</pre>";
 
-echo "<pre>#|";
-foreach ($query[0] as $key2 => $value2) {
-	echo trim($key2)."|";
-}
-echo "<br>";
-$i = 1;
-foreach ($query as $key => $value) {
+// foreach ($query as $key => $value) {
+// 	echo $value['username'].'<br>';
+// }
 
-	echo $i."|";
-	foreach ($value as $key1 => $valor) {
-		echo utf8_encode(trim($valor))."|";
+// echo "</pre>";
+echo db_connect();
+
+function db_connect() {
+
+	static $connection;
+	if (!isset($connection)) {
+		//$config = parse_ini_file('config.ini'); 
+		$BaseDeDatos = 'db_cfdi';
+		$connection  = new mysqli('localhost', 'adminapl', 'DByuXIN9YVbXhBOALfWh', $BaseDeDatos);
+
+		/*$BaseDeDatos = 'cfdi';
+		$connection  = new mysqli('10.52.70.61', 'cfdi', 'PikgkOyHVhAp6z7CsOsg', $BaseDeDatos);*/
+
 	}
-	$i++;
-	echo "<br>";
-	flush();
-	ob_flush();
-}
 
-echo "</pre>";
+    if ($connection->connect_errno) {
+        return "error de conexión: " . $connection->connect_error;
+    }
+
+	return $connection;
+
+}
 
 
 ?>
