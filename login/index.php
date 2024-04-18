@@ -107,6 +107,7 @@
                                     <button class="btn btn-info" type="submit" id="btn-signin" name="btn-signin"> Iniciar </button>
                                 </div>
 
+                                <div id="resultado"></div>
                             </form>
                         </div> <!-- end card-body -->
                     </div>
