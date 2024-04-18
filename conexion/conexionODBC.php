@@ -16,7 +16,7 @@ function db_connectODBC() {
     static $connection;
 
     if(!isset($connection)) {
-        $config = parse_ini_file('configODBCv2.ini'); 
+        $config = parse_ini_file('configODBC.ini'); 
         $connection = odbc_connect($config['dsnname'],$config['username'],$config['password']);
     }
 
