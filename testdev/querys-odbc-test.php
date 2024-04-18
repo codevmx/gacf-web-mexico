@@ -6,7 +6,7 @@ ini_set("max_execution_time", "500000");
 // print_r($_SESSION);
 // echo "</pre>";
 
-$sql = "SELECT * FROM RESCON";
+$sql = "SELECT * FROM ".$bim01f.".RESCON";
 
 echo "<pre>";
 print_r($sql);
