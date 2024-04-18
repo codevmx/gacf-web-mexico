@@ -5,7 +5,7 @@ ini_set("max_execution_time", "500000");
 // echo "<pre>";
 // print_r($_SESSION);
 // echo "</pre>";
-
+echo db_conectODBC();
 $sql = "SELECT * FROM RESCON";
 
 echo "<pre>";
