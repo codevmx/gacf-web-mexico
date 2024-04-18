@@ -10,7 +10,7 @@ function FnLogin(){
         data: $("#signupForm").serialize(),
         type: "POST",
         dataType: "html",
-        url: "pgm/login-pgm.php",
+        url: "../pgm/login-pgm.php",
         beforeSend: function() {
             $("#icon-circle").remove();
             $("#btn-signin").addClass("disabled");
