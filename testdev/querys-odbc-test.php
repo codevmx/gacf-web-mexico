@@ -1,5 +1,5 @@
 <?php
-include("../conexion/conexionODBC.php");
+include("/gacf-web-mexico/conexion/conexionODBC.php");
 ini_set("max_execution_time", "500000");
 
 // echo "<pre>";
