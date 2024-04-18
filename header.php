@@ -46,7 +46,7 @@
                     <!-- Topbar Brand Logo -->
                     <div class="logo-topbar">
                         <!-- Logo light -->
-                        <a href="inicio" class="logo-light">
+                        <a href="gacf-dashboard" class="logo-light">
                             <span class="logo-lg">
                                 <img src="/gacf-web-mexico/assets/images/login_logo_v2.png" alt="logo">
                             </span>
@@ -55,7 +55,7 @@
                             </span>
                         </a>
                         <!-- Logo Dark -->
-                        <a href="inicio" class="logo-dark">
+                        <a href="gacf-dashboard" class="logo-dark">
                             <span class="logo-lg">
                                 <img src="/gacf-web-mexico/assets/images/login_logo.png" alt="dark logo">
                             </span>
@@ -353,7 +353,7 @@
         <div class="leftside-menu">
 
             <!-- Brand Logo Light -->
-            <a href="inicio" class="logo logo-light">
+            <a href="gacf-dashboard" class="logo logo-light">
                 <span class="logo-lg">
                     <img src="/gacf-web-mexico/assets/images/login_logo_v2.png" alt="logo">
                 </span>
@@ -362,7 +362,7 @@
                 </span>
             </a>
             <!-- Brand Logo Dark -->
-            <a href="inicio" class="logo logo-dark">
+            <a href="gacf-dashboard" class="logo logo-dark">
                 <span class="logo-lg">
                     <img src="/gacf-web-mexico/assets/images/login_logo.png" alt="dark logo">
                 </span>
@@ -405,7 +405,7 @@
                     <li class="side-nav-title mt-1"> Menú</li>
 
                     <li class="side-nav-item">
-                        <a href="inicio" class="side-nav-link">
+                        <a href="gacf-dashboard" class="side-nav-link">
                             <i class="bi bi-clipboard-data"></i>
                             <span> Dashboard </span>
                         </a>
