@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // DataTables
     var tables = $("#datatables-importesppto").DataTable({
         "ajax": {
-            "url": "presupuesto/ajax/datatables/tb_importesPPTO_ajax.php",
+            "url": "/gacf-web-mexico/presupuesto/ajax/datatables/tb_importesPPTO_ajax.php",
             "type": "POST"
         },
         "columns": [

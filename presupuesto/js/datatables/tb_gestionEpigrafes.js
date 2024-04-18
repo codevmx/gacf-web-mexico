@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // DataTables
     var tables = $("#datatables-gestionEpigrafes").DataTable({
         "ajax": {
-            "url": "presupuesto/ajax/datatables/tb_epigrafes_gestion_ajax.php",
+            "url": "/gacf-web-mexico/presupuesto/ajax/datatables/tb_epigrafes_gestion_ajax.php",
             "type": "POST"
         },
         "columns": [
