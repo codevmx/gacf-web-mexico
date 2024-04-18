@@ -1,5 +1,5 @@
-        <!-- Theme Settings -->
-        <!-- <div class="offcanvas offcanvas-end" tabindex="-1" id="theme-settings-offcanvas">
+<!-- Theme Settings -->
+<!-- <div class="offcanvas offcanvas-end" tabindex="-1" id="theme-settings-offcanvas">
             <div class="d-flex align-items-center bg-primary p-3 offcanvas-header">
                 <h5 class="text-white m-0">Theme Settings</h5>
                 <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -176,52 +176,94 @@
             </div>
         </div> -->
 
-        <!-- Vendor js -->
-        <script src="/gacf-web-mexico/assets/js/vendor.min.js"></script>
+<script>
+    function FnNotificacion(mensaje, tipo) {
+            // Configura las opciones de la notificación según el tipo
+            var opciones = {
+                text: mensaje,
+                position: 'top-right', // Posición de la notificación
+                hideAfter: 3000, // Tiempo de ocultamiento en milisegundos (3 segundos)
+                loaderBg: '#E9EAF8' // Color del fondo de la notificación
+            };
 
-        <!-- Daterangepicker js -->
-        <script src="/gacf-web-mexico/assets/vendor/daterangepicker/moment.min.js"></script>
-        <script src="/gacf-web-mexico/assets/vendor/daterangepicker/daterangepicker.js"></script>
+            // Muestra la notificación según el tipo especificado
+            switch (tipo) {
+                case 'success':
+                    // Notificación de éxito
+                    opciones.bgColor = '#18bc9c';
+                    opciones.textColor = '#ffffff';
+                    $.toast(opciones);
+                    break;
+                case 'error':
+                    // Notificación de error
+                    opciones.bgColor = '#e74c3c';
+                    opciones.textColor = '#ffffff';
+                    $.toast(opciones);
+                    break;
+                case 'warning':
+                    // Notificación de advertencia
+                    opciones.bgColor = '#f39c12';
+                    opciones.textColor = '#ffffff';
+                    $.toast(opciones);
+                    break;
+                default:
+                    // Por defecto, mostrar una notificación informativa
+                    opciones.bgColor = '#3498db';
+                    opciones.textColor = '#ffffff';
+                    $.toast(opciones);
+            }
+        }
+</script>
 
-        <!-- Apex Charts js -->
-        <script src="/gacf-web-mexico/assets/vendor/apexcharts/apexcharts.min.js"></script>
+<!-- Vendor js -->
+<script src="/gacf-web-mexico/assets/js/vendor.min.js"></script>
 
-        <!-- Vector Map js -->
-        <script src="/gacf-web-mexico/assets/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js"></script>
-        <script src="/gacf-web-mexico/assets/vendor/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js"></script>
+<script src="/gacf-web-mexico/assets/vendor/jquery-toast-plugin/jquery.toast.min.js"></script>
 
-        <!-- Dashboard App js -->
-        <script src="/gacf-web-mexico/assets/js/pages/demo.dashboard.js"></script>
+<!-- Daterangepicker js -->
+<script src="/gacf-web-mexico/assets/vendor/daterangepicker/moment.min.js"></script>
+<script src="/gacf-web-mexico/assets/vendor/daterangepicker/daterangepicker.js"></script>
 
-        <!-- Datatables js -->
-        <script src="/gacf-web-mexico/assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
-        <script src="/gacf-web-mexico/assets/vendor/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
-        <script src="/gacf-web-mexico/assets/vendor/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-        <script src="/gacf-web-mexico/assets/vendor/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
-        <script src="/gacf-web-mexico/assets/vendor/datatables.net-fixedcolumns-bs5/js/fixedColumns.bootstrap5.min.js"></script>
-        <script src="/gacf-web-mexico/assets/vendor/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-        <script src="/gacf-web-mexico/assets/vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-        <script src="/gacf-web-mexico/assets/vendor/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
-        <script src="/gacf-web-mexico/assets/vendor/datatables.net-buttons/js/buttons.html5.min.js"></script>
-        <script src="/gacf-web-mexico/assets/vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
-        <script src="/gacf-web-mexico/assets/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
-        <script src="/gacf-web-mexico/assets/vendor/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-        <script src="/gacf-web-mexico/assets/vendor/datatables.net-select/js/dataTables.select.min.js"></script>
+<!-- Apex Charts js -->
+<script src="/gacf-web-mexico/assets/vendor/apexcharts/apexcharts.min.js"></script>
 
-        <!-- Datatable Demo Aapp js -->
-        <script src="/gacf-web-mexico/assets/js/pages/demo.datatable-init.js"></script>
+<!-- Vector Map js -->
+<script src="/gacf-web-mexico/assets/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script
+    src="/gacf-web-mexico/assets/vendor/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js"></script>
 
-        <!-- App js -->
-        <script src="/gacf-web-mexico/assets/js/app.min.js"></script>
+<!-- Dashboard App js -->
+<script src="/gacf-web-mexico/assets/js/pages/demo.dashboard.js"></script>
 
-        <!--  Select2 Plugin Js -->
-        <script src="/gacf-web-mexico/assets/vendor/select2/js/select2.min.js"></script>
+<!-- Datatables js -->
+<script src="/gacf-web-mexico/assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="/gacf-web-mexico/assets/vendor/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+<script src="/gacf-web-mexico/assets/vendor/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="/gacf-web-mexico/assets/vendor/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
+<script src="/gacf-web-mexico/assets/vendor/datatables.net-fixedcolumns-bs5/js/fixedColumns.bootstrap5.min.js"></script>
+<script src="/gacf-web-mexico/assets/vendor/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+<script src="/gacf-web-mexico/assets/vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="/gacf-web-mexico/assets/vendor/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
+<script src="/gacf-web-mexico/assets/vendor/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="/gacf-web-mexico/assets/vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
+<script src="/gacf-web-mexico/assets/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="/gacf-web-mexico/assets/vendor/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+<script src="/gacf-web-mexico/assets/vendor/datatables.net-select/js/dataTables.select.min.js"></script>
+
+<!-- Datatable Demo Aapp js -->
+<script src="/gacf-web-mexico/assets/js/pages/demo.datatable-init.js"></script>
+
+<!-- App js -->
+<script src="/gacf-web-mexico/assets/js/app.min.js"></script>
+
+<!--  Select2 Plugin Js -->
+<script src="/gacf-web-mexico/assets/vendor/select2/js/select2.min.js"></script>
 
 
-        <script src="/gacf-web-mexico/presupuesto/js/datatables/tb_epigrafes.js"></script>
-        <script src="/gacf-web-mexico/presupuesto/js/datatables/tb_gestionEpigrafes.js"></script>
-        <script src="/gacf-web-mexico/presupuesto/js/datatables/tb_importesppto.js"></script>
+<script src="/gacf-web-mexico/presupuesto/js/datatables/tb_epigrafes.js"></script>
+<script src="/gacf-web-mexico/presupuesto/js/datatables/tb_gestionEpigrafes.js"></script>
+<script src="/gacf-web-mexico/presupuesto/js/datatables/tb_importesppto.js"></script>
 
-        </body>
+</body>
 
-        </html>
+</html>

@@ -1,3 +1,9 @@
+<?php
+
+include("conexion/conexion.php");
+include("conexion/conexionODBC.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +18,8 @@
     <link rel="shortcut icon" href="/gacf-web-mexico/assets/images/favicon.ico">
     <!-- Daterangepicker css -->
     <link rel="stylesheet" href="/gacf-web-mexico/assets/vendor/daterangepicker/daterangepicker.css">
+    <!-- Plugin css -->
+    <link rel="stylesheet" href="/gacf-web-mexico/assets/vendor/jquery-toast-plugin/jquery.toast.min.css">
     <!-- Vector Map css -->
     <link rel="stylesheet" href="/gacf-web-mexico/assets/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css">
     <!-- Theme Config Js -->
@@ -32,6 +40,12 @@
     <!-- Icons css -->
     <link href="/gacf-web-mexico/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
 </head>
+
+<style>
+    .bordeRojoValidacion { 
+        border-color: #d02b4e9e;
+    }
+</style>
 
 <body>
     <!-- Begin page -->
