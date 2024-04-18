@@ -449,10 +449,10 @@ include("conexion/conexionODBC.php");
                         <div class="collapse" id="sidebarPanelC">
                             <ul class="side-nav-second-level">
                                 <li>
-                                    <a href="gacf-gestion-epigrafes">Carga de Epígrafes</a>
+                                    <a href="gacf-carga-epigrafes">Carga de Epígrafes</a>
                                 </li>
                                 <li>
-                                    <a href="gacf-carga-epigrafes">Gestión de Epígrafes</a>
+                                    <a href="gacf-gestion-epigrafes">Gestión de Epígrafes</a>
                                 </li>
                             </ul>
                         </div>
