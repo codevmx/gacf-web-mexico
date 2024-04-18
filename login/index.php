@@ -78,7 +78,7 @@
                                 <br><h4 class="text-dark-50 text-center pb-0">Iniciar Sesión</h4>
                             </div>
 
-                            <form action="#">
+                            <form method="post" id="signupForm" class="form-validate" novalidate>
 
                                 <div class="mb-3">
                                     <label for="Idusername" class="form-label">Usuario</label>
@@ -104,10 +104,8 @@
                                 </div>
 
                                 <div class="mb-3 mb-0 text-center">
-                                    <button class="btn btn-info" type="submit" id="btn-signin"> Iniciar </button>
+                                    <button class="btn btn-info" type="submit" id="btn-signin" name="btn-signin"> Iniciar </button>
                                 </div>
-<!-- 
-                                  -->
 
                             </form>
                         </div> <!-- end card-body -->
