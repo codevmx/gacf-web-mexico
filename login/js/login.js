@@ -10,7 +10,7 @@ function FnLogin(){
         data: $("#signupForm").serialize(),
         type: "POST",
         dataType: "html",
-        url: "../pgm/login-pgm.php",
+        url: "/gacf-web-mexico/login/pgm/login-pgm.php",
         beforeSend: function() {
             $("#icon-circle").remove();
             $("#btn-signin").addClass("disabled");
@@ -19,20 +19,22 @@ function FnLogin(){
         success: function(data) {
 
             var json = eval("(" + data + ")");
+            band     = json.band;
             msj      = json.msj;
-            perfil   = json.perfil;
+            alert    = json.alert;
+            //perfil   = json.perfil;
 
-            if (msj == '4') {					
+            if (band == '4') {					
                 //Error por permisos
-                $("#resultado").html('<div class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error!</strong> &nbsp;El usuario ingresado no tiene permisos de acceso, verifíquelo con su administrador.</div>');
-            } else if (msj == '3') {					
+                FnNotificacion(msj,alert);	
+            } else if (band == '3') {
                 //Error con username
-                $("#resultado").html('<div class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error!</strong> &nbsp;El usuario ingresado no existe.</div>');
-            } else if (msj == '2') {
+                FnNotificacion(msj,alert);	
+            } else if (band == '2') {
                 // Error Password
-                $("#resultado").html('<div class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error!</strong> &nbsp;El usuario y/o la contraseña ingresados no coinciden.</div>');
-            } else if (msj == '1') {
-                $("#resultado").html('<div class="alert alert-success alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Redireccionando!</strong> &nbsp;El usuario y la contraseña son correctos.</div>');
+                FnNotificacion(msj,alert);	
+            } else if (band == '1') {
+                FnNotificacion(msj,alert);	
                 window.location.href = "gacf-dashboard";
                 $('#signupForm').trigger("reset");                
 

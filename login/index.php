@@ -16,6 +16,8 @@
     <link href="/gacf-web-mexico/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
     <!-- Icons css -->
     <link href="/gacf-web-mexico/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- Plugin css -->
+    <link rel="stylesheet" href="/gacf-web-mexico/assets/vendor/jquery-toast-plugin/jquery.toast.min.css">
 
     <script src="/gacf-web-mexico/assets/js/jquery/jquery-3.5.1.min.js"></script>
     <script src="/gacf-web-mexico/login/js/login.js"></script>
@@ -107,7 +109,6 @@
                                     <button class="btn btn-info" type="submit" id="btn-signin" name="btn-signin"> Iniciar </button>
                                 </div>
 
-                                <div id="resultado"></div>
                             </form>
                         </div> <!-- end card-body -->
                     </div>
@@ -138,6 +139,9 @@
 
     <!-- Vendor js -->
     <script src="/gacf-web-mexico/assets/js/vendor.min.js"></script>
+    <!-- Notificaciones -->
+    <script src="/gacf-web-mexico/assets/js/notificaciones.js"></script>
+    <script src="/gacf-web-mexico/assets/vendor/jquery-toast-plugin/jquery.toast.min.js"></script>
     <!-- App js -->
     <script src="/gacf-web-mexico/assets/js/app.min.js"></script>
 

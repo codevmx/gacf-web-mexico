@@ -20,12 +20,18 @@ if($Duser['count']>0){
 			//registrar nueva contraseña
 				//$_SESSION['userempRN'] = $username;
 				//$ar['msj'] = '4';
-				$ar['msj'] 						= '1';
+				
 				$_SESSION['Idusername-signin'] 	= $username;
                 $_SESSION['Idperfil-signin'] 	= $perfiluser;
 
+				$ar['band'] 	= '1';
+				$ar['msj'] 		= 'El usuario y la contraseña son correctos.';
+				$ar['alert']	= 'success';
+
 		}else{		
-			$ar['msj'] = '2';	
+			$ar['band'] 	= '2';	
+			$ar['msj'] 		= 'El usuario y/o la contraseña ingresados no coinciden.';
+			$ar['alert']	= 'error';
 		}
 
 	// }else{
@@ -35,8 +41,9 @@ if($Duser['count']>0){
 	
 
 }else{
-	$ar['msj'] = '3';
-	
+	$ar['band'] 	= '3';
+	$ar['msj'] 		= 'El usuario ingresado no existe.';
+	$ar['alert']	= 'error';
 }
 
 
