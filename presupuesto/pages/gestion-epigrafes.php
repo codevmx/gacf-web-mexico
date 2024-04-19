@@ -24,7 +24,6 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="page-title">Mantenimiento</h4>
                             <div class="alert alert-info" role="alert">
                                 <strong>Instrucciones : </strong> Deberá seleccionar el Epigrafe que desea actualizar de
                                 la siguiente consulta, podrá realizar las acciones de crear, actualizar y eliminar
