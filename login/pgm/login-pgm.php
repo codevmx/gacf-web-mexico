@@ -11,9 +11,9 @@ $Duser    = FnCTUsuarios($username,'C');
 
 if($Duser['count']>0){
 
-	$passworduser = base64_decode($Duser['password']);
-    $perfiluser   = $Duser['nivel'];
-	$situacion 	  = $Duser['cambio'];
+	$passworduser = md5($Duser['password']);
+    $perfiluser   = $Duser['perfil'];
+	$situacion 	  = $Duser['situacion'];
 	//$estatus 		= $Duser['estatususer'];
 
 	if($situacion==0){

@@ -10,7 +10,7 @@ if($Duser['count']>0){
 
     $key = bin2hex(random_bytes(32));
 
-    $UTBUSER = "UPDATE users SET password='".base64_encode($key)."', cambio=1 WHERE username='".$username."'"; //
+    $UTBUSER = "UPDATE tb_usuarios SET password='".md5($key)."', situacion=1 WHERE username='".$username."'"; //
     $RTBUSER = db_query($UTBUSER);
 
 

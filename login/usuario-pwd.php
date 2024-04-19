@@ -1,3 +1,12 @@
+<?php
+
+include("../conexion/conexion.php");
+include("../conexion/functions.php");
+
+$Duser = FnCTUsuarios($_COOKIE['utk_sesion'],'C');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,13 +83,13 @@
                         <div class="card-body">
 
                             <div class="text-center w-75 m-auto">
-                                <img src="/gacf-web-mexico/assets/images/users/avatar-1.jpg" alt="image" class="rounded-circle avatar-md img-thumbnail">
+                                <img src="/gacf-web-mexico/assets/images/users/<?=$Duser['imgperfil']?>" alt="image" class="rounded-circle avatar-md img-thumbnail">
                                 <!-- <div class="spinner-load"></div> -->
                            </div>
                                
                             <div class="text-center w-75 m-auto"> 
                                 <br><h4 class="text-dark-50 text-center pb-0">Bienvenido</h4>
-                                <p class="text-muted mb-1">Juan Carlos Segoviano Diaz</p>
+                                <p class="text-muted mb-1"><?=$Duser['nombre_completo']?></p>
                             </div>
 
                             <form method="post" id="signupForm" class="form-validate" novalidate>

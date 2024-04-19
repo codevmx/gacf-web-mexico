@@ -27,7 +27,7 @@ function FnLogin(){
                 FnNotificacion(msj,alert);	
                 $("#btn-signin").text("Actualización de contraseña...");
                 setTimeout(function() {
-                    window.location.href = "gacf-recuperar-pwd";
+                    window.location.href = "gacf-actualizar-pwd";
                 }, 3000);
 
                 $('#signupForm').trigger("reset");   

@@ -1,22 +1,47 @@
 
 <?php
 function FnCTUsuarios($ID,$accion){
+
+    $ID = (strpos(trim($ID),'U-')!== false) ? substr(trim($ID),2,10) : trim($ID);
+
     switch ($accion) {
         case 'C':
-            $BTBUSERS = "SELECT * FROM users WHERE username = '".$ID."' ORDER BY id_user ASC";
-            $RTBUSERS = db_select($BTBUSERS);
+            $BTBUSERS           = "SELECT * FROM tb_usuarios WHERE username = '".$ID."' ORDER BY ID_user ASC";
+            $RTBUSERS           = db_select($BTBUSERS);
 
-            $data['count'] = count($RTBUSERS);
+            $data['count']      = count($RTBUSERS);
 
-            $RTBUSERS = $RTBUSERS[0];
+            $RTBUSERS           = $RTBUSERS[0];
 
-            $data['id_user']    = trim($RTBUSERS['id_user']);
+            $Dperfil            = FnCTPerfil($RTBUSERS['ID_perfil']);
+            $data['ID_user']    = trim($RTBUSERS['ID_user']);
             $data['username']   = trim($RTBUSERS['username']);
             $data['password']   = trim($RTBUSERS['password']);
-
+            $data['nombres']    = trim($RTBUSERS['nombres']);
+            $data['apellidop']  = trim($RTBUSERS['apellidop']);
+            $data['apellidom']  = trim($RTBUSERS['apellidom']);
+            $data['nombre_completo']  = trim($RTBUSERS['nombres']).' '.trim($RTBUSERS['apellidop']).' '.trim($RTBUSERS['apellidom']);
+            $data['rfc']        = trim($RTBUSERS['rfc']);
+            $data['correo']     = trim($RTBUSERS['correo']);
+            $data['ID_perfil']  = $RTBUSERS['ID_perfil'];
+            $data['perfil']     = $Dperfil['nombre'];
+            $data['imgperfil']  = trim($RTBUSERS['imgperfil']);            
+            $data['situacion']  = $RTBUSERS['situacion'];
+            $data['estatus']    = $RTBUSERS['estatus'];
 
             break;
     }
+
+    return $data;
+}
+
+function FnCTPerfil($ID){
+    $RTBNIV             = db_select("SELECT * FROM niveles WHERE id_nivel=".$ID." ORDER BY id_nivel ASC ");
+    $data['count']      = count($RTBNIV);
+
+    $RTBUSERS           = $RTBUSERS[0];
+    $data['nivel']      = trim($RTBUSERS['nivel']);
+    $data['nombre']     = trim($RTBUSERS['nombre']);
 
     return $data;
 }
