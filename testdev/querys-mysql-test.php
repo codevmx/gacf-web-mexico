@@ -12,7 +12,7 @@ $query 	= db_select($sql);
 echo "<pre>";
 
 foreach ($query as $key => $value) {
- 	echo $value['username'].'|'.$value['nivel'].'|'.$value['password'].'|'.$value['situacion'].'<br>';
+ 	echo $value['username'].'|'.$value['ID_perfil'].'|'.$value['password'].'|'.$value['situacion'].'<br>';
 }
 
 echo "</pre>";
