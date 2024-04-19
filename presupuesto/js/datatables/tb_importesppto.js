@@ -3,10 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.tablaimportesppto = function (datos) {
 
-        if (datos!='') {
+        if (datos != '') {
             var tables = $("#datatables-importesppto").DataTable({
                 "ajax": {
-                    "data":datos,
+                    "data": datos,
                     "url": "/gacf-web-mexico/presupuesto/ajax/datatables/tb_importesPPTO_ajax.php",
                     "type": "POST"
                 },
@@ -32,10 +32,10 @@ document.addEventListener("DOMContentLoaded", function () {
                         'previous': "Anterior"
                     }
                 }
-    
+
             });
         }
-        
+
     };
 
 });
