@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Portal GACF | Recuperar Contraseña</title>
+    <title>Portal GACF | Restablecer Contraseña</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Coderthemes" name="author" />
@@ -76,7 +76,7 @@
 
                             <div class="text-center w-75 m-auto">
                                 <!-- <div class="spinner-load"></div> -->
-                                <h4 class="text-dark-50 text-center pb-0">Recuperar Contraseña</h4>
+                                <h4 class="text-dark-50 text-center pb-0">Restablecer Contraseña</h4>
                             </div>
 
                             <form method="post" id="restoreForm" class="form-validate" novalidate>

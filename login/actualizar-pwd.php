@@ -82,11 +82,27 @@
                             <form method="post" id="restoreForm" class="form-validate" novalidate>
 
                                 <div class="mb-3 mb-0 text-center">
-                                    <span class="badge badge-outline-success">Enviaremos un correo electrónico con su contraseña temporal.</span><hr>     
+                                    <span class="badge badge-outline-success">A continuación ingrese y confirme su nueva contraseña.</span><hr>     
                                 </div>
+                              
                                 <div class="mb-3">
-                                    <label for="IdusernameR" class="form-label">Usuario</label>
-                                    <input class="form-control" type="text" id="IdusernameR-signin" name="IdusernameR-signin" required="" placeholder="Ingresar clave de usuario">
+                                    <label for="Idpassword" class="form-label">Nueva Contraseña</label>
+                                    <div class="input-group input-group-merge">
+                                        <input class="form-control" type="password" id="Idpassword-signin" name="Idpassword-signin"  required="" placeholder="Ingresar nueva contraseña">
+                                        <div class="input-group-text" data-password="false">
+                                            <span class="password-eye"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="Idpassword-new" class="form-label">Confirmar Contraseña</label>
+                                    <div class="input-group input-group-merge">
+                                        <input class="form-control" type="password" id="Idpassword-signin-new" name="Idpassword-signin-new"  required="" placeholder="Confirmar contraseña">
+                                        <div class="input-group-text" data-password="false">
+                                            <span class="password-eye"></span>
+                                        </div>
+                                    </div>
                                 </div>
 
 

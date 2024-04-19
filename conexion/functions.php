@@ -9,25 +9,29 @@ function FnCTUsuarios($ID,$accion){
             $BTBUSERS           = "SELECT * FROM tb_usuarios WHERE username = '".$ID."' ORDER BY ID_user ASC";
             $RTBUSERS           = db_select($BTBUSERS);
 
-            $data['count']      = count($RTBUSERS);
+            if(count($RTBUSERS)>0){
+                $data['count']      = count($RTBUSERS);
 
-            $RTBUSERS           = $RTBUSERS[0];
+                $RTBUSERS           = $RTBUSERS[0];
 
-            $Dperfil            = FnCTPerfil($RTBUSERS['ID_perfil']);
-            $data['ID_user']    = trim($RTBUSERS['ID_user']);
-            $data['username']   = trim($RTBUSERS['username']);
-            $data['password']   = trim($RTBUSERS['password']);
-            $data['nombres']    = trim($RTBUSERS['nombres']);
-            $data['apellidop']  = trim($RTBUSERS['apellidop']);
-            $data['apellidom']  = trim($RTBUSERS['apellidom']);
-            $data['nombre_completo']  = trim($RTBUSERS['nombres']).' '.trim($RTBUSERS['apellidop']).' '.trim($RTBUSERS['apellidom']);
-            $data['rfc']        = trim($RTBUSERS['rfc']);
-            $data['correo']     = trim($RTBUSERS['correo']);
-            $data['ID_perfil']  = $RTBUSERS['ID_perfil'];
-            $data['perfil']     = $Dperfil['nombre'];
-            $data['imgperfil']  = trim($RTBUSERS['imgperfil']);            
-            $data['situacion']  = $RTBUSERS['situacion'];
-            $data['estatus']    = $RTBUSERS['estatus'];
+                $Dperfil            = FnCTPerfil($RTBUSERS['ID_perfil']);
+                $data['ID_user']    = trim($RTBUSERS['ID_user']);
+                $data['username']   = trim($RTBUSERS['username']);
+                $data['password']   = trim($RTBUSERS['password']);
+                $data['nombres']    = trim($RTBUSERS['nombres']);
+                $data['apellidop']  = trim($RTBUSERS['apellidop']);
+                $data['apellidom']  = trim($RTBUSERS['apellidom']);
+                $data['nombre_completo']  = trim($RTBUSERS['nombres']).' '.trim($RTBUSERS['apellidop']).' '.trim($RTBUSERS['apellidom']);
+                $data['rfc']        = trim($RTBUSERS['rfc']);
+                $data['correo']     = trim($RTBUSERS['correo']);
+                $data['ID_perfil']  = $RTBUSERS['ID_perfil'];
+                $data['perfil']     = $Dperfil['nombre'];
+                $data['imgperfil']  = trim($RTBUSERS['imgperfil']);            
+                $data['situacion']  = $RTBUSERS['situacion'];
+                $data['estatus']    = $RTBUSERS['estatus'];
+            }else{
+                $data['count']      = 0;
+            }
 
             break;
     }

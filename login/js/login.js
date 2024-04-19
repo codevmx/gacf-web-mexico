@@ -20,12 +20,11 @@ function FnLogin(){
             band     = json.band;
             msj      = json.msj;
             alert    = json.alert;
-            //perfil   = json.perfil;
 
             if (band == '4') {					
                 //Error por permisos
                 FnNotificacion(msj,alert);	
-                $("#btn-signin").text("Actualización de contraseña...");
+                $("#btn-signin").text("Redireccionando...");
                 setTimeout(function() {
                     window.location.href = "gacf-actualizar-pwd";
                 }, 3000);
@@ -36,7 +35,6 @@ function FnLogin(){
                 //Error con username
                 FnNotificacion(msj,alert);
                 FnUploadLogin()
-
             } else if (band == '2') {
                 // Error Password
                 FnNotificacion(msj,alert);	
@@ -50,10 +48,7 @@ function FnLogin(){
 
                 $('#signupForm').trigger("reset");                
 
-            }
-            
-            	
-
+            }                      	
 
         }
 

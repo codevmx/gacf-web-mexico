@@ -11,16 +11,14 @@ $Duser    = FnCTUsuarios($username,'C');
 
 if($Duser['count']>0){
 
-	$passworduser = md5($Duser['password']);
+	$passworduser = $Duser['password'];
     $perfiluser   = $Duser['perfil'];
 	$situacion 	  = $Duser['situacion'];
-	//$estatus 		= $Duser['estatususer'];
-
+	//$estatus 		= $Duser['estatususer'];	
+	
 	if($situacion==0){
-		if($passworduser==$password){	
-			//registrar nueva contraseña
-				//$_SESSION['userempRN'] = $username;
-				//$ar['msj'] = '4';
+		if($passworduser==md5($password)){	
+			
 				if (isset($_POST['checkbox-signin'])) {
 
 					if (isset($_COOKIE['tk_sesion'])) {
@@ -46,16 +44,21 @@ if($Duser['count']>0){
 			$ar['band'] 	= '2';	
 			$ar['msj'] 		= 'El usuario y/o la contraseña sin incorrectos.';
 			$ar['alert']	= 'error';
-		}
+		}	
 
 	}else{
-		$ar['band'] 	= '4';
-		$ar['msj'] 		= 'Acceso exitoso!';
-		$ar['alert']	= 'success';
+		if($passworduser==$password){
+
+			$_SESSION['Idusername-updatepwd'] 	= $username;
+			$ar['band'] 	= '4';
+			$ar['msj'] 		= 'Acceso exitoso!';
+			$ar['alert']	= 'success';
+		}else{
+			$ar['band'] 	= '2';	
+			$ar['msj'] 		= 'El usuario y/o la contraseña sin incorrectos.';
+			$ar['alert']	= 'error';
+		}
 	}
-
-	
-
 }else{
 	$ar['band'] 	= '3';
 	$ar['msj'] 		= 'El usuario ingresado no existe.';
