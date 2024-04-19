@@ -6,12 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
         var title = $(this).text();
         $(this).html("<input type=\"text\" class=\"form-control\" placeholder=\"Buscar " + title + "\" />");
     });*/
-
     // DataTables
     var tables = $("#datatables-importesppto").DataTable({
         "ajax": {
             "url": "/gacf-web-mexico/presupuesto/ajax/datatables/tb_importesPPTO_ajax.php",
-            "type": "POST"
+            "type": "GET"
         },
         "columns": [
             { "data": "linea" },
