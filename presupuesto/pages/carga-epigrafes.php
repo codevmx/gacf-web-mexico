@@ -47,7 +47,7 @@
 
                                 </form>
                             </div>
-                            <div class="table-responsive">
+                            <div class="table-responsive" style="display:none" id="Divtable-epigrafes">
                                 <table id="datatables-epigrafes" class="table table-striped dt-responsive nowrap w-100" >
                                     <thead class="table-dark text-center">
                                         <tr>

@@ -1,7 +1,6 @@
 $(document).ready(function () {
 
-    $('#BtnCargarCSV').click(function () {
-        alert('Entro');
+    $('#BtnCargarCSV').click(function () {        
         FnCargarArchivo();
     });
 });
@@ -75,6 +74,7 @@ function FnCargarArchivo() {
             FnNotificacion(msj, alerta);
             $("#datatables-epigrafes").DataTable().ajax.reload();
             $('#FileInput2').val('');
+            $("#Divtable-epigrafes").fadeIn();
             // $("#DivMsj").empty('');
             // $("#DivMsj").append(msj1);
         }
