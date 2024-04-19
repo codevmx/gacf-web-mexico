@@ -2,17 +2,17 @@
 include("../conexion/conexion.php");
 
 
-// echo "<pre>";
-// print_r($_SESSION);
-// echo "</pre>";
+echo "<pre>";
+print_r($_SESSION);
+echo "</pre>";
 
-$sql 	= "SELECT * FROM users LIMIT 10";
+$sql 	= "SELECT * FROM users WHERE username='marketing'";
 $query 	= db_select($sql);
 
 echo "<pre>";
 
 foreach ($query as $key => $value) {
- 	echo $value['username'].'<br>'.$value['nivel'];
+ 	echo $value['username'].'|'.$value['nivel'].'|'.$value['password'].'<br>';
 }
 
 echo "</pre>";

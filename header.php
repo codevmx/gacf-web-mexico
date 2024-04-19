@@ -351,9 +351,9 @@ include("conexion/conexionODBC.php");
                             </a>
 
                             <!-- item-->
-                            <a href="#" class="dropdown-item">
+                            <a href="gacf-logout-pwd" class="dropdown-item">
                                 <i class="ri-logout-box-fill align-middle me-1"></i>
-                                <span>Logout</span>
+                                <span>Cerrar Sesión</span>
                             </a>
                         </div>
                     </li>
