@@ -5,7 +5,7 @@ include ("../../../conexion/conexionODBC.php");
 include ("../../../conexion/functions.php");
 
 $tabla  = '';
-$idppto = $_POST[0];
+$idppto = 1;
 
 if ($idppto != '') {
     $BTBPPTOF = "SELECT * FROM tb_mkt_presupuesto_det WHERE ID_presupuesto = " . $idppto . " ";
@@ -23,16 +23,24 @@ if ($idppto != '') {
             $Depigrafe = FnDatosepigrafe($key['ID_epigrafe']);
             $Dstatus = ($key['estatus'] == 0) ? 'Pendiente' : 'Confirmado';
             $Dstyle = ($key['estatus'] == 0) ? 'class="warning"' : 'class="success"';
+            $boton = "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#modalppto' data-id='".$key['ID']."' ><i class='glyphicon glyphicon-th'></i></button>";
 
-            $tabla .= '{"linea":"' . $i . '",
-                    "cuentajde":"' . $Depigrafe['cuentajde'] . '",
-                    "epigrafe":"' . $Depigrafe['epigrafe'] . '",
-                    "clave":"' . $Depigrafe['clave'] . '",
-                    "descripciongasto":"' . $Depigrafe['desgasto'] . '",
-                    "motivogasto":"' . $Depigrafe['motgasto'] . '",
-                    "estatus":"' . $Dstatus . '",
-                    "total":"' . number_format($total, 2) . '",
-                    "acciones":"Prueba"},';
+            $tabla .= '{"epigrafe":"' . $Depigrafe['epigrafe'] . '",
+                        "clave":"' . $Depigrafe['clave'] . '",
+                        "descripciongasto":"' . $Depigrafe['desgasto'] . '",
+                        "motivogasto":"' . $Depigrafe['motgasto'] . '",
+                        "enero":"0",
+                        "febrero":"0",
+                        "marzo":"0",
+                        "abril":"0",
+                        "mayo":"0",
+                        "junio":"0",
+                        "julio":"0",
+                        "agosto":"0",
+                        "septiembre":"0",
+                        "octubre":"0",
+                        "noviembre":"0",
+                        "diciembre":"0"},';
         }
     }
 }

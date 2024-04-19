@@ -212,7 +212,7 @@
 <script src="/gacf-web-mexico/assets/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
 <script src="/gacf-web-mexico/assets/vendor/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
 <script src="/gacf-web-mexico/assets/vendor/datatables.net-select/js/dataTables.select.min.js"></script>
-
+<script src="https://cdn.datatables.net/fixedcolumns/3.2.2/js/dataTables.fixedColumns.min.js"></script>
 <!-- Datatable Demo Aapp js -->
 <script src="/gacf-web-mexico/assets/js/pages/demo.datatable-init.js"></script>
 

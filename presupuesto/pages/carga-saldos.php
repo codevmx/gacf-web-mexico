@@ -31,12 +31,14 @@
                                 <input class="form-control " type="hidden" name="keyppto" id="keyppto" readonly>
                                 <div class="row">
                                     <div class="mb-3 col-md-4">
-                                        <label for="anio" class="form-label">Año (<span class="text-danger">*</span>)</label>
+                                        <label for="anio" class="form-label">Año (<span
+                                                class="text-danger">*</span>)</label>
                                         <input class="form-control " type="number" id="anio" name="anio" min="2023"
                                             max="3000" placeholder="Año">
                                     </div>
                                     <div class="mb-3 col-md-4">
-                                        <label for="inputCentroC" class="form-label">Centro de Costos (<span class="text-danger">*</span>)</label>
+                                        <label for="inputCentroC" class="form-label">Centro de Costos (<span
+                                                class="text-danger">*</span>)</label>
                                         <select class="form-control " id="inputCentroC" name="inputCentroC"
                                             style="width: 100%;">
                                             <?php
@@ -51,7 +53,8 @@
                                         </select>
                                     </div>
                                     <div class="mb-3 col-md-4">
-                                        <label for="inputEmpresa" class="form-label">Empresa (<span class="text-danger">*</span>)</label>
+                                        <label for="inputEmpresa" class="form-label">Empresa (<span
+                                                class="text-danger">*</span>)</label>
                                         <select class="form-control " id="inputEmpresa" name="inputEmpresa"
                                             style="width: 100%;">
                                             <?php
@@ -81,25 +84,32 @@
                                         Descargar Plantilla</button>
                                 </a>
                                 <button class="btn btn-success" type="button" data-bs-toggle="modal"
-                                    data-bs-target="#modalppto">
+                                    data-bs-target="#modalpptoImportar">
                                     <i class="bi bi-cloud-upload"></i>
                                     Importar Presupuesto
                                 </button>
-                                <div class="table-responsive mt-3" >
-                                    <table id="datatables-importesppto" style="display:none;"
-                                        class="table table-striped dt-responsive nowrap w-100">
+                                <div class="table-responsive mt-3">
+                                    <table id="datatables-importesppto" 
+                                        class="table table-striped nowrap row-border order-column w-100">
                                         <!--  id="makeEditable" -->
                                         <thead class="table-dark text-center">
                                             <tr>
-                                                <th>Linea</th>
-                                                <th>Cuenta JDE</th>
                                                 <th>Epigrafe</th>
                                                 <th>Clave</th>
                                                 <th>Descripción Gasto</th>
                                                 <th>Motivo Gasto</th>
-                                                <th>Estatus</th>
-                                                <th>Total </th>
-                                                <th>Asignar</th>
+                                                <th>Enero</th>
+                                                <th>Febrero</th>
+                                                <th>Marzo</th>
+                                                <th>Abril</th>
+                                                <th>Mayo</th>
+                                                <th>Junio</th>
+                                                <th>Julio</th>
+                                                <th>Agosto</th>
+                                                <th>Septembre</th>
+                                                <th>Octubre</th>
+                                                <th>Noviembre</th>
+                                                <th>Diciembre</th>
                                             </tr>
                                         </thead>
                                     </table>
@@ -113,7 +123,7 @@
     </div>
 </div>
 
-<!-- Modal para Eliminar Registro -->
+<!-- Modal para Agregar de Importes PPTO -->
 <div id="modalppto" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-full-width">
@@ -157,6 +167,33 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
                 <button type="button" class="btn btn-success" onclick="FnGuardarPresupuesto()">Confirmar</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Modal para Importar datos con Excel -->
+<div id="modalpptoImportar" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h4 class="modal-title" id="standard-modalLabel">Importar datos con Excel</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formExcel" action="" method="post" enctype="multipart/form-data">
+                    <input class="form-control " type="hidden" name="keypptoExcel" id="keypptoExcel" readonly>
+                    <div class="progress" id="barProgress" style="display: none;"></div>
+                    <div class="form-group" id="InputCargaArch">
+                        <label for="FileInputExcel">Subir Archivo:</label>
+                        <input name="FileInputExcel" id="FileInputExcel" type="file" class="form-control"
+                            accept=".xlsx, .xls, .csv" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

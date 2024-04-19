@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    window.tablaimportesppto('');
+    window.tablaimportesppto(1);
     
     // Funcion para repartir datos de un excel
     $('#celda').on('input', function () {
