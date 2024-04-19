@@ -21,7 +21,7 @@
     <!-- Jquery js -->
     <script src="/gacf-web-mexico/assets/js/jquery/jquery-3.5.1.min.js"></script>
     <!-- JS app -->
-    <script src="/gacf-web-mexico/login/js/login.js"></script>
+    <script src="/gacf-web-mexico/login/js/recuperar-pwd.js"></script>
 
 </head>
 
@@ -61,10 +61,10 @@
                         <!-- Logo -->
                         <div class="card-header pt-4 text-center">
                             <div class="auth-brand mb-0">
-                                <a href="index.html" class="logo-dark">
+                                <a href="gacf" class="logo-dark">
                                     <span><img src="/gacf-web-mexico/assets/images/login_logo.png" alt="dark logo" height="28"></span>
                                 </a>
-                                <a href="index.html" class="logo-light">
+                                <a href="gacf" class="logo-light">
                                     <span><img src="/gacf-web-mexico/assets/images/login_logo_v2.png" alt="logo" height="28"></span>
                                 </a>
                             </div>
@@ -79,20 +79,20 @@
                                 <h4 class="text-dark-50 text-center pb-0">Recuperar Contraseña</h4>
                             </div>
 
-                            <form action="#">
+                            <form method="post" id="restoreForm" class="form-validate" novalidate>
 
                                 <div class="mb-3 mb-0 text-center">
                                     <span class="badge badge-outline-success">Enviaremos un correo electrónico con su contraseña temporal.</span><hr>     
                                 </div>
                                 <div class="mb-3">
-                                    <label for="Idusername" class="form-label">Usuario</label>
-                                    <input class="form-control" type="text" id="Idusername" required="" placeholder="Ingresar clave de usuario">
+                                    <label for="IdusernameR" class="form-label">Usuario</label>
+                                    <input class="form-control" type="text" id="IdusernameR-signin" name="IdusernameR-signin" required="" placeholder="Ingresar clave de usuario">
                                 </div>
 
 
                                 <div class="mb-3 mb-0 text-center">
-                                    <button class="btn btn-info" type="submit"><i class="bi bi-send-check"></i> Enviar </button>
-                                    <a href="login"> | Salir</a>
+                                    <button class="btn btn-info" type="submit" id="btn-restore" name="btn-restore" >Enviar </button>
+                                    <a href="gacf"> | Salir</a>
                                 </div>
 
                                 

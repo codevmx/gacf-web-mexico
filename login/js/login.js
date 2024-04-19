@@ -12,9 +12,7 @@ function FnLogin(){
         dataType: "html",
         url: "/gacf-web-mexico/login/pgm/login-pgm.php",
         beforeSend: function() {
-            $("#icon-circle").remove();
-            $("#btn-signin").addClass("disabled");
-            $("#btn-signin").append('<span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="false"></span>');
+            FnLoadLogin();
         },
         success: function(data) {
 
@@ -27,22 +25,51 @@ function FnLogin(){
             if (band == '4') {					
                 //Error por permisos
                 FnNotificacion(msj,alert);	
+                $("#btn-signin").text("Actualización de contraseña...");
+                setTimeout(function() {
+                    window.location.href = "gacf-recuperar-pwd";
+                }, 3000);
+
+                $('#signupForm').trigger("reset");   
+
             } else if (band == '3') {
                 //Error con username
-                FnNotificacion(msj,alert);	
+                FnNotificacion(msj,alert);
+                FnUploadLogin()
+
             } else if (band == '2') {
                 // Error Password
                 FnNotificacion(msj,alert);	
+                FnUploadLogin()
             } else if (band == '1') {
                 FnNotificacion(msj,alert);	
-                window.location.href = "gacf-dashboard";
+                $("#btn-signin").text("Inicializando perfil...");
+                setTimeout(function() {
+                    window.location.href = "gacf-dashboard";
+                }, 3000);
+
                 $('#signupForm').trigger("reset");                
 
             }
+            
+            	
+
 
         }
 
     });
 
     return false;
+}
+
+function FnLoadLogin(){
+    $("#icon-circle").remove();
+    $("#btn-signin").addClass("disabled");
+    $("#btn-signin").append('<span class="spinner-border spinner-border-sm me-1" id="spinner-load" role="status" aria-hidden="false"></span>');
+}
+
+function FnUploadLogin(){
+    $("#spinner-load").remove();
+    $("#btn-signin").removeClass("disabled");
+    $("#btn-signin").append('<i class="bi bi-arrow-right-circle" id="icon-circle"></i>');
 }

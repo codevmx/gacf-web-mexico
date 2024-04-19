@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Portal GACF | Bienvenido</title>
+    <title>Portal GACF | Bienvenido <?=$_COOKIE['utk_sesion']?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Coderthemes" name="author" />
@@ -83,13 +83,16 @@
                                 <p class="text-muted mb-1">Juan Carlos Segoviano Diaz</p>
                             </div>
 
-                            <form action="#">
-                                <br>
+                            <form method="post" id="signupForm" class="form-validate" novalidate>
                                 <div class="mb-3">
-                                    <a href="recuperar-pwd" class="text-muted float-end fs-12"> ¿Olvidó su Contraseña?</a>
+                                    <input class="form-control" type="hidden" id="Idusername-signin" name="Idusername-signin" value="<?=$_COOKIE['utk_sesion']?>">
+                                </div>
+
+                                <div class="mb-3">
+                                    <a href="gacf-recuperar-pwd" class="text-muted float-end fs-12"> ¿Olvidó su Contraseña?</a>
                                     <label for="Idpassword" class="form-label">Contraseña</label>
                                     <div class="input-group input-group-merge">
-                                        <input class="form-control" type="password" id="Idpassword" name="Idpassword"  required="" placeholder="Ingresar contraseña">
+                                        <input class="form-control" type="password" id="Idpassword-signin" name="Idpassword-signin"  required="" placeholder="Ingresar contraseña">
                                         <div class="input-group-text" data-password="false">
                                             <span class="password-eye"></span>
                                         </div>
@@ -97,7 +100,7 @@
                                 </div>
 
                                 <div class="mb-3 mb-0 text-center">
-                                    <button class="btn btn-info" type="submit"><i class="bi bi-arrow-right-circle"></i> Iniciar </button>
+                                    <button class="btn btn-info" type="submit" id="btn-signin" name="btn-signin">Ingresar </button>
                                 </div>
 
                             </form>

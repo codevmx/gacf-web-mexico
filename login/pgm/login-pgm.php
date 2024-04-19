@@ -3,40 +3,56 @@
 include("../../conexion/conexion.php");
 include("../../conexion/functions.php");
 
-$username = trim($_POST['Idusername-signin']);
-$password = md5($_POST['Idpassword-signin']);
+$username = (strpos(trim($_POST['Idusername-signin']),'U-')!== false) ? substr(trim($_POST['Idusername-signin']),2,10) : trim($_POST['Idusername-signin']);
+
+$password = protect(htmlentities($_POST['Idpassword-signin'])); //md5($_POST['Idpassword-signin']);
 
 $Duser    = FnCTUsuarios($username,'C');
 
 if($Duser['count']>0){
 
-	$passworduser = $Duser['password'];
+	$passworduser = base64_decode($Duser['password']);
     $perfiluser   = $Duser['nivel'];
-	//$situacion 		= $Duser['situacion'];
+	$situacion 	  = $Duser['cambio'];
 	//$estatus 		= $Duser['estatususer'];
 
-	//if($estatus==2){
+	if($situacion==0){
 		if($passworduser==$password){	
 			//registrar nueva contraseña
 				//$_SESSION['userempRN'] = $username;
 				//$ar['msj'] = '4';
+				if (isset($_POST['checkbox-signin'])) {
+
+					if (isset($_COOKIE['tk_sesion'])) {
+						// Establece la cookie con el mismo nombre pero sin valor y en una fecha de expiración pasada
+						setcookie('tk_sesion', '', time() - 3600, '/');
+					}
+
+					$token = bin2hex(random_bytes(32));
+					// Establecer la cookie con el identificador de sesión
+					setcookie("tk_sesion", $token, time() + (86400 * 30), "/");
+					setcookie("utk_sesion", 'U-'.$username, time() + (86400 * 30), "/");
+
+				}
 				
 				$_SESSION['Idusername-signin'] 	= $username;
                 $_SESSION['Idperfil-signin'] 	= $perfiluser;
 
 				$ar['band'] 	= '1';
-				$ar['msj'] 		= 'El usuario y la contraseña son correctos.';
+				$ar['msj'] 		= 'Acceso exitoso!';
 				$ar['alert']	= 'success';
 
 		}else{		
 			$ar['band'] 	= '2';	
-			$ar['msj'] 		= 'El usuario y/o la contraseña ingresados no coinciden.';
+			$ar['msj'] 		= 'El usuario y/o la contraseña sin incorrectos.';
 			$ar['alert']	= 'error';
 		}
 
-	// }else{
-	// 	$ar['msj'] = '5';	
-	// }
+	}else{
+		$ar['band'] 	= '4';
+		$ar['msj'] 		= 'Acceso exitoso!';
+		$ar['alert']	= 'success';
+	}
 
 	
 

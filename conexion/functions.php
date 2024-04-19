@@ -49,4 +49,28 @@ function vaciarCarpeta($carpeta) {
     return true;
 }
 
+function FnDatosepigrafe($ID){
+    $BTBEPI = "SELECT * FROM tb_mkt_epigrafes WHERE ID=".$ID." ";
+    $RTBEPI = db_select($BTBEPI);
+
+    if(count($RTBEPI)>0){
+        $datos['cuentatg']  = $RTBEPI[0]['cuentatg'];  
+        $datos['cuentajde'] = $RTBEPI[0]['cuentajde'];  
+        $datos['epigrafe']  = $RTBEPI[0]['epigrafe'];  
+        $datos['clave']     = $RTBEPI[0]['clave'];  
+        $datos['desgasto']  = $RTBEPI[0]['desgasto'];  
+        $datos['motgasto']  = $RTBEPI[0]['motgasto']; 
+    }else{
+        $datos['cuentatg']  = ''; 
+        $datos['cuentajde'] = ''; 
+        $datos['epigrafe']  = ''; 
+        $datos['clave']     = ''; 
+        $datos['desgasto']  = ''; 
+        $datos['motgasto']  = '';
+    }
+
+
+    return $datos;
+}
+
 ?>
