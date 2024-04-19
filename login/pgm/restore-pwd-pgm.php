@@ -8,12 +8,13 @@ $Duser    = FnCTUsuarios($username,'C');
 
 if($Duser['count']>0){   
 
-    $key = bin2hex(random_bytes(32));
+    $keyg = bin2hex(random_bytes(32));
+    $keyn = md5($keyg);
 
-    $UTBUSER = "UPDATE tb_usuarios SET password='".md5($key)."', situacion=1 WHERE username='".$username."'"; //
+    $UTBUSER = "UPDATE tb_usuarios SET password='".$keyn."', situacion=1 WHERE username='".$username."'"; //
     $RTBUSER = db_query($UTBUSER);
 
-
+    $_SESSION['keyn'] = $keyn;
     //if($envioemail['rest']==0){
         $ar['band']     = '1';
         $ar['msj'] 		= 'Solicitud enviada con exito.';
