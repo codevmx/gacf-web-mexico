@@ -85,8 +85,8 @@
                                     <i class="bi bi-cloud-upload"></i>
                                     Importar Presupuesto
                                 </button>
-                                <div class="table-responsive mt-3">
-                                    <table id="datatables-importesppto"
+                                <div class="table-responsive mt-3" >
+                                    <table id="datatables-importesppto" style="display:none;"
                                         class="table table-striped dt-responsive nowrap w-100">
                                         <!--  id="makeEditable" -->
                                         <thead class="table-dark text-center">

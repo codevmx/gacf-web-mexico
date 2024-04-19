@@ -5,9 +5,7 @@ include ("../../../conexion/conexionODBC.php");
 include ("../../../conexion/functions.php");
 
 $tabla  = '';
-$idppto = $_POST['keyppto'];
-
-$_SESSION['pruebas'] = $_POST;
+$idppto = $_POST[0];
 
 if ($idppto != '') {
     $BTBPPTOF = "SELECT * FROM tb_mkt_presupuesto_det WHERE ID_presupuesto = " . $idppto . " ";

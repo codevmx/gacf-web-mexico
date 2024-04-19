@@ -1,5 +1,6 @@
 $(document).ready(function () {
-
+    window.tablaimportesppto('');
+    
     // Funcion para repartir datos de un excel
     $('#celda').on('input', function () {
         // Obtener el valor del campo de entrada
@@ -183,10 +184,6 @@ function CrearPresupuesto() {
         type: "POST",
         dataType: "html",
         url: "/gacf-web-mexico/presupuesto/ajax/crearPresupuesto_ajax.php",
-        success: function(response) {
-            // Recarga los datos del DataTable y envía los datos adicionales al servidor
-            $("#datatables-importesppto").DataTable().ajax.reload();
-        },
         success: function (data) {
             alert(data);
             var json = eval("(" + data + ")");
@@ -196,8 +193,11 @@ function CrearPresupuesto() {
             if (msj == 'exito') {
                 $("#keyppto").val(idppto);
                 $("#keypptoExcel").val(idppto);
+                window.tablaimportesppto(idppto);
+                $("#datatables-importesppto").fadeIn();
+                //$("#datatables-importesppto").DataTable().ajax.reload(); 
+                //GenerarPlantilla(idppto);
                 
-                GenerarPlantilla(idppto);
             }
         }
 
