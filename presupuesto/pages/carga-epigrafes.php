@@ -36,14 +36,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-sm-12">
-
-                                        <div style="width:100%;text-align:center;display:none;" id="loading-img2">
-                                            <h5>Por favor espere, estamos cargando el archivo...</h5>
-                                            <img src="images/loader1.gif" alt="Por favor espere, estamos subiendo su documento..." width="60" height="60" />
-                                        </div>
-
-                                    </div>
+                                    <div class="progress mt-3" id="barProgresspas" style="display: none;"></div>
 
                                 </form>
                             </div>

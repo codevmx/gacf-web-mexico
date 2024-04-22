@@ -87,7 +87,7 @@ $(document).ready(function () {
         });
 
         if (vacios > 0) {
-            FnNotificacion('<strong>Error!</strong> Por favor asegurarse de llenar todos los campos obligatorios(*).', 'error');
+            FnNotificacion('Por favor asegurarse de llenar todos los campos obligatorios(*).', 'error');
         } else {
             CrearPresupuesto();
         }
@@ -202,13 +202,13 @@ function CrearPresupuesto() {
                 window.tablaimportesppto(idppto);
                 $("#divPaso2").fadeIn();
                 $("#BtnCrearPPTO").fadeOut();
-                FnNotificacion('<strong>Exito!</strong> Se genero correctamente la plantilla!', 'success');
+                FnNotificacion('Se genero exitosamente la plantilla!', 'success');
                 //$("#datatables-importesppto").DataTable().ajax.reload(); 
                 //GenerarPlantilla(idppto);
 
             }else{
                 $('#BtnCrearPPTO').prop('disabled', false);
-                FnNotificacion('<strong>Error!</strong> Tuvimos problemas al generar la plantilla', 'error');
+                FnNotificacion('Tuvimos problemas al generar la plantilla', 'error');
             }
         }
 
@@ -244,10 +244,6 @@ function VisualizarImportes($idepi) {
         type: "POST",
         dataType: "html",
         url: "/gacf-web-mexico/presupuesto/ajax/editarPresupuestoEpi_ajax.php?epi=" + idepi,
-        beforeSend: function () {
-            $("#barProgressimportes").fadeIn();
-            $("#barProgressimportes").html('<div class="progress-bar progress-bar-striped progress-bar-animated" style="width:100%">Cargando ....</div>');
-        },
         success: function (data) {
             var json = eval("(" + data + ")");
             msj = json.msj;

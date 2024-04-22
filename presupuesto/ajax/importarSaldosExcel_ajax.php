@@ -49,6 +49,9 @@ if (move_uploaded_file($_FILES['FileInputExcel']['tmp_name'], $UploadDirectory .
             }
         }
     }
+
+    $_SESSION['datos'] = $datos;
+
     $BTBPPTOF = db_select("SELECT * FROM tb_mkt_presupuesto_det WHERe ID_presupuesto=" . $keypptoExcel . " ");
     
 
@@ -58,18 +61,31 @@ if (move_uploaded_file($_FILES['FileInputExcel']['tmp_name'], $UploadDirectory .
         $DATOS = explode(',', trim($datos[$BTBEPIGRA[0]['cuentajde']][$BTBEPIGRA[0]['clave']]));
 
         if (!empty($datos[$BTBEPIGRA[0]['cuentajde']][$BTBEPIGRA[0]['clave']])) {
-            $UTBPPTOCAB = db_query("UPDATE tb_mkt_presupuesto_det SET   pptoene=" . $DATOS[0] . ",
-            pptofeb=" . $DATOS[1] . ",
-            pptomar=" . $DATOS[2] . ",
-            pptoabr=" . $DATOS[3] . ",
-            pptomay=" . $DATOS[4] . ",
-            pptojun=" . $DATOS[5] . ",
-            pptojul=" . $DATOS[6] . ",
-            pptoago=" . $DATOS[7] . ",
-            pptosep=" . $DATOS[8] . ",
-            pptooct=" . $DATOS[9] . ",
-            pptonov=" . $DATOS[10] . ",
-            pptodic=" . $DATOS[11] . ",
+            $UTBPPTOCAB = db_query("UPDATE tb_mkt_presupuesto_det SET   
+            realene=" . $DATOS[0] . ",
+            pptoene=" . $DATOS[1] . ",
+            realfeb=" . $DATOS[2] . ",
+            pptofeb=" . $DATOS[3] . ",
+            realmar=" . $DATOS[4] . ",
+            pptomar=" . $DATOS[5] . ",
+            realabr=" . $DATOS[6] . ",
+            pptoabr=" . $DATOS[7] . ",
+            realmay=" . $DATOS[8] . ",
+            pptomay=" . $DATOS[9] . ",
+            realjun=" . $DATOS[10] . ",
+            pptojun=" . $DATOS[11] . ",
+            realjul=" . $DATOS[12] . ",
+            pptojul=" . $DATOS[13] . ",
+            realago=" . $DATOS[14] . ",
+            pptoago=" . $DATOS[15] . ",
+            realsep=" . $DATOS[16] . ",
+            pptosep=" . $DATOS[17] . ",
+            realoct=" . $DATOS[18] . ",
+            pptooct=" . $DATOS[19] . ",
+            realnov=" . $DATOS[20] . ",
+            pptonov=" . $DATOS[21] . ",
+            realdic=" . $DATOS[22] . ",
+            pptodic=" . $DATOS[23] . ",
             estatus=1 WHERE ID_epigrafe=" . $key['ID_epigrafe'] . " AND ID_presupuesto = " . $key['ID_presupuesto'] . "");
         }
     }
