@@ -102,7 +102,7 @@ $(document).ready(function () {
         var modal = $(this)
         modal.find('.modal-title').text('Agregar de Importes PPTO');
         modal.find('.modal-body #keyepig').val(id);
-
+        $("#resultadoppto").empty('');
         VisualizarImportes(id);
     });
 
