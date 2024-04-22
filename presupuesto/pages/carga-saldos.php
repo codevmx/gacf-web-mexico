@@ -75,10 +75,12 @@
                                 <button type="button" class="btn btn-success" id="BtnCrearPPTO"><i
                                         class="bi bi-file-ruled"></i> Crear Plantilla</button>
                             </div>
-                            <h5 class="page-title mt-3">Paso 2: Pre-Visualización de Plantilla para ingresar importes
-                                PPTO</h5>
+                            <div class="progress mt-3" id="barProgresspas2" style="display: none;"></div>
                             <!-- <input class="form-control " type="text" id="buscador" onkeyup="myFunction()" placeholder="Buscar.."> -->
-                            <div class="mt-3">
+                            <div class="mt-3" id="divPaso2" style="display:none;">
+                                <h5 class="page-title mt-3">Paso 2: Pre-Visualización de Plantilla para ingresar
+                                    importes
+                                    PPTO</h5>
                                 <a href="download_mkt_plantilla.php">
                                     <button class="btn btn-warning" type="button"><i class="bi bi-cloud-download"></i>
                                         Descargar Plantilla</button>
@@ -89,7 +91,7 @@
                                     Importar Presupuesto
                                 </button>
                                 <div class="table-responsive mt-3">
-                                    <table id="datatables-importesppto" 
+                                    <table id="datatables-importesppto"
                                         class="table table-striped nowrap row-border order-column w-100">
                                         <!--  id="makeEditable" -->
                                         <thead class="table-dark text-center">
@@ -98,18 +100,31 @@
                                                 <th>Clave</th>
                                                 <th>Descripción Gasto</th>
                                                 <th>Motivo Gasto</th>
-                                                <th>Enero</th>
-                                                <th>Febrero</th>
-                                                <th>Marzo</th>
-                                                <th>Abril</th>
-                                                <th>Mayo</th>
-                                                <th>Junio</th>
-                                                <th>Julio</th>
-                                                <th>Agosto</th>
-                                                <th>Septembre</th>
-                                                <th>Octubre</th>
-                                                <th>Noviembre</th>
-                                                <th>Diciembre</th>
+                                                <th class="table-danger">Real Enero</th>
+                                                <th class="table-info">PTTO Enero</th>
+                                                <th class="table-danger">Real Febrero</th>
+                                                <th class="table-info">PTTO Febrero</th>
+                                                <th class="table-danger">Real Marzo</th>
+                                                <th class="table-info">PTTO Marzo</th>
+                                                <th class="table-danger">Real Abril</th>
+                                                <th class="table-info">PTTO Abril</th>
+                                                <th class="table-danger">Real Mayo</th>
+                                                <th class="table-info">PTTO Mayo</th>
+                                                <th class="table-danger">Real Junio</th>
+                                                <th class="table-info">PTTO Junio</th>
+                                                <th class="table-danger">Real Julio</th>
+                                                <th class="table-info">PTTO Julio</th>
+                                                <th class="table-danger">Real Agosto</th>
+                                                <th class="table-info">PTTO Agosto</th>
+                                                <th class="table-danger">Real Septiembre</th>
+                                                <th class="table-info">PTTO Septiembre</th>
+                                                <th class="table-danger">Real Octubre</th>
+                                                <th class="table-info">PTTO Octubre</th>
+                                                <th class="table-danger">Real Noviembre</th>
+                                                <th class="table-info">PTTO Noviembre</th>
+                                                <th class="table-danger">Real Diciembre</th>
+                                                <th class="table-info">PTTO Diciembre</th>
+                                                <th>Acciones</th>
                                             </tr>
                                         </thead>
                                     </table>
@@ -140,7 +155,8 @@
                         <input class="form-control" type="text" name="celda" id="celda"
                             placeholder="Ingrese datos de copiado">
                     </div>
-                    <div class="table-responsive">
+                    <div class="progress mt-3" id="barProgressimportes" style="display: none;"></div>
+                    <div class="table-responsive" id="divTablaEditarImportes" style="display:none;">
                         <table class="table table-striped dt-responsive nowrap w-100 mt-3">
                             <thead class="table-dark text-center">
                                 <tr>
@@ -158,7 +174,7 @@
                                     <th class="col-1">Diciembre</th>
                                 </tr>
                             </thead>
-                            <tbody id="resultadoppto">
+                            <tbody id="resultadoppto" >
                             </tbody>
                         </table>
                     </div>
@@ -184,12 +200,13 @@
             <div class="modal-body">
                 <form id="formExcel" action="" method="post" enctype="multipart/form-data">
                     <input class="form-control " type="hidden" name="keypptoExcel" id="keypptoExcel" readonly>
-                    <div class="progress" id="barProgress" style="display: none;"></div>
+
                     <div class="form-group" id="InputCargaArch">
                         <label for="FileInputExcel">Subir Archivo:</label>
                         <input name="FileInputExcel" id="FileInputExcel" type="file" class="form-control"
                             accept=".xlsx, .xls, .csv" />
                     </div>
+                    <div class="progress" id="barProgress" style="display: none;"></div>
                 </form>
             </div>
             <div class="modal-footer">

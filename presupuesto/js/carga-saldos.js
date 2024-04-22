@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    window.tablaimportesppto(1);
-    
+    //window.tablaimportesppto(1);
+
     // Funcion para repartir datos de un excel
     $('#celda').on('input', function () {
         // Obtener el valor del campo de entrada
@@ -127,7 +127,7 @@ function FnCargarArchExcel() {
         dataType: "html",
         contentType: false,
         processData: false,
-        url: "mkt/leer_archivo_presupuesto_ajax.php",
+        url: "/gacf-web-mexico/presupuesto/ajax/importarSaldosExcel_ajax.php",
         beforeSend: function () {
             $("#barProgress").fadeIn();
             $("#barProgress").html('<div class="progress-bar progress-bar-striped progress-bar-animated" style="width:100%">Cargando ....</div>');
@@ -140,11 +140,13 @@ function FnCargarArchExcel() {
             // mensaje     = json9.mensaje;
             // accion      = json9.accion;
             // opciones    = json9.opciones;
-
+            msj = json9.msj;
+            alerta = json9.alerta;
+            FnNotificacion(msj, alerta);
             $("#barProgress").fadeOut();
             $("#FileInputExcel").val('');
-            GenerarPlantilla($('#keyppto').val());
             $('#modalpptoImportar').modal('hide');
+            window.tablaimportesppto($('#keyppto').val());
         }
 
     });
@@ -178,26 +180,38 @@ function myFunction() {
 
 
 function CrearPresupuesto() {
-    alert('Entro');
     $.ajax({
         data: $("#datappto-form").serialize(),
         type: "POST",
         dataType: "html",
         url: "/gacf-web-mexico/presupuesto/ajax/crearPresupuesto_ajax.php",
+        beforeSend: function () {
+            $("#barProgresspas2").fadeIn();
+            $("#barProgresspas2").html('<div class="progress-bar progress-bar-striped progress-bar-animated" style="width:100%">Cargando ....</div>');
+            $('#BtnCrearPPTO').prop('disabled', true);
+        },
         success: function (data) {
-            alert(data);
             var json = eval("(" + data + ")");
             msj = json.msj;
             idppto = json.idppto;
-
+            $("#barProgresspas2").fadeOut();
+            $("#barProgresspas2").html('');
             if (msj == 'exito') {
+                $('#BtnCrearPPTO').prop('disabled', false);
+                $('#BtnCrearPPTO').prop('disabled', false);
+                $('#BtnCrearPPTO').prop('disabled', false);
                 $("#keyppto").val(idppto);
                 $("#keypptoExcel").val(idppto);
                 window.tablaimportesppto(idppto);
-                $("#datatables-importesppto").fadeIn();
+                $("#divPaso2").fadeIn();
+                $("#BtnCrearPPTO").fadeOut();
+                FnNotificacion('<strong>Exito!</strong> Se genero correctamente la plantilla!', 'success');
                 //$("#datatables-importesppto").DataTable().ajax.reload(); 
                 //GenerarPlantilla(idppto);
-                
+
+            }else{
+                $('#BtnCrearPPTO').prop('disabled', false);
+                FnNotificacion('<strong>Error!</strong> Tuvimos problemas al generar la plantilla', 'error');
             }
         }
 
@@ -232,16 +246,19 @@ function VisualizarImportes($idepi) {
         data: $("#editarppto-form").serialize(),
         type: "POST",
         dataType: "html",
-        url: "presupuesto/ajax/editarPresupuestoEpi_ajax.php?epi=" + idepi,
+        url: "/gacf-web-mexico/presupuesto/ajax/editarPresupuestoEpi_ajax.php?epi=" + idepi,
         beforeSend: function () {
-            //$("#resultadoppto").html("<img src='../images/loader1.gif' width='60' height='60' />");
+            $("#barProgressimportes").fadeIn();
+            $("#barProgressimportes").html('<div class="progress-bar progress-bar-striped progress-bar-animated" style="width:100%">Cargando ....</div>');
         },
         success: function (data) {
-            alert(data);
             var json = eval("(" + data + ")");
             msj = json.msj;
+            $("#barProgressimportes").fadeOut();
+            $("#barProgressimportes").html('');
             $("#resultadoppto").empty('');
             $("#resultadoppto").html(msj);
+            $("#divTablaEditarImportes").show("slow");
 
         }
 
@@ -253,16 +270,19 @@ function FnGuardarPresupuesto() {
         data: $("#editarppto-form").serialize(),
         type: "POST",
         dataType: "html",
-        url: "mkt/editarPresupuestoEpi_pgm.php",
+        url: "/gacf-web-mexico/presupuesto/pgm/editarPresupuestoEpi_pgm.php",
         beforeSend: function () {
-            $("#resultadoppto").html("<img src='../images/loader1.gif' width='60' height='60' />");
+            //$("#resultadoppto").html("<img src='../images/loader1.gif' width='60' height='60' />");
         },
         success: function (data) {
             var json = eval("(" + data + ")");
             band = json.band;
+            msj = json.msj;
+            alerta = json.alerta;
+            FnNotificacion(msj, alerta);
             if (band == 1) {
                 $('#modalppto').modal('hide');
-                GenerarPlantilla($('#keyppto').val());
+                window.tablaimportesppto($('#keyppto').val());
             }
 
         }
