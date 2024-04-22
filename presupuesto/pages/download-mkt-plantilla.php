@@ -1,13 +1,6 @@
 <?php
-session_start();
-ini_set("max_execution_time", "7200");
-include("conexion/conexion.php");
-include("conexion/conexionODBC.php");
-
-/** Error reporting */
-error_reporting(E_ALL);
-ini_set('display_errors', FALSE);
-ini_set('display_startup_errors', FALSE);
+include("../../conexion/conexion.php");
+include("../../conexion/conexionODBC.php");
 
 
 $username   = $_SESSION['username'];
@@ -17,18 +10,62 @@ $result     = db_select($sql);
 
 $file = basename("plantilla_mkt_" . date("Ymd") . "_" . date("His"));
 
-define('EOL', (PHP_SAPI == 'cli') ? PHP_EOL : '<br />');
-
 /** Include PHPExcel */
-require_once 'PHPExcel/Classes/PHPExcel.php';
-require_once 'PHPExcel/Classes/PHPExcel/IOFactory.php';
+require '../../../vendor/autoload.php';
+
+////////////////////////////////////////////////////////
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;           // Libreria para escribir en el archivo
+use PhpOffice\PhpSpreadsheet\Style\Border;          // Libreria para Bordes
+use PhpOffice\PhpSpreadsheet\Style\Fill;            // Libreria para Pintar la celda completa
+use PhpOffice\PhpSpreadsheet\Style\NumberFormat;    // Libreria para formato de contabilidad
+use PhpOffice\PhpSpreadsheet\Worksheet\Drawing;     // Libreria para insertar imagenes
+use PhpOffice\PhpSpreadsheet\Style\Color;           // Libreria para fuenta de letra
+use PhpOffice\PhpSpreadsheet\Style\Font;            // Libreria para color de letra
+use PhpOffice\PhpSpreadsheet\Style\Alignment;       // Libreria para alinear texto
+
+
+$styleArrayCeldaTotal = [
+    'fill' => [
+        'fillType' => Fill::FILL_SOLID,
+        'startColor' => ['argb' => 'DCE6F1'], // Azul Claro
+    ],
+];
+
+$styleArrayCelda = [
+    'fill' => [
+        'fillType' => Fill::FILL_SOLID,
+        'startColor' => ['argb' => '204CAF'], // Azul
+    ],
+];
+/////////* Configuracion Color del Texto  */////////
+$styleArrayColorText = [
+    'font' => [
+        'color' => [
+            'rgb' => 'FFFFFF', // Blanco
+        ],
+    ],
+];
+
+/////////* Configuracion Formato de Contabilidad  *///////// 
+$styleArrayContab = [
+    'numberFormat' => [
+        'formatCode' => '"$"#,##0.00_);[Red]("$"#,##0.00)',
+    ],
+];
+
+/////////* Configuracion de Alineacion de texto  */////////
+$styleArrayAling = [
+    'alignment' => [
+        'horizontal' => Alignment::HORIZONTAL_CENTER, // Alineación horizontal al centro
+        'vertical' => Alignment::VERTICAL_CENTER,     // Alineación vertical al centro
+    ],
+];
 
 // Create new PHPExcel object
-echo date('H:i:s'), " Documento creado con exito ", EOL;
-$objPHPExcel = new PHPExcel();
+$objPHPExcel = new Spreadsheet();
 
 // Set document properties
-echo date('H:i:s'), " Agregando propiedades del documento ", EOL;
 $objPHPExcel->getProperties()->setCreator("Grupo Planeta México")
     ->setLastModifiedBy("Grupo Planeta México")
     ->setTitle("Plantilla Presupuesto")
@@ -37,17 +74,16 @@ $objPHPExcel->getProperties()->setCreator("Grupo Planeta México")
     ->setKeywords("Grupo Planeta México ")
     ->setCategory("Plantilla Presupuesto");
 
-$objDrawing = new PHPExcel_Worksheet_Drawing();
+$objDrawing = new Drawing();
 $objDrawing->setName('Logo');
 $objDrawing->setDescription('Logo');
-$objDrawing->setPath('images/firmas/EPM880422LV3.jpg');
+$objDrawing->setPath('../../assets/images/EPM880422LV3.jpg');
 $objDrawing->setHeight(90);
 $objDrawing->setCoordinates('F1');
 $objDrawing->setWorksheet($objPHPExcel->getActiveSheet());
 
 // Add some data
 
-echo date('H:i:s'), " Agregando Cabecera de Resumen General ", EOL;
 $objPHPExcel->setActiveSheetIndex(0)
     ->setCellValue('A6', '#')
     ->setCellValue('B6', 'Epigrafe')
@@ -141,28 +177,11 @@ $objPHPExcel->setActiveSheetIndex(0)
 //->setCellValue('H'.$t, '=SUM(H7:H'.($i-1).')');
 //->setCellValue('I'.$i, );
 
-$styleArray = array(
-    'borders' => array(
-        'allborders' => array(
-            'style' => PHPExcel_Style_Border::BORDER_THIN
-        )
-    )
-);
-
-//Borde
-//$objPHPExcel->getActiveSheet()->getStyle('E'.$t.':H'.$t)->applyFromArray($styleArray);
-unset($styleArray);
-
 function cellColor($cells, $color)
 {
     global $objPHPExcel;
-
-    $objPHPExcel->getActiveSheet()->getStyle($cells)->getFill()->applyFromArray(array(
-        'type' => PHPExcel_Style_Fill::FILL_SOLID,
-        'startcolor' => array(
-            'rgb' => $color
-        )
-    ));
+    global $styleArrayCeldaTotal;
+    $objPHPExcel->getActiveSheet()->getStyle($cells)->applyFromArray($styleArrayCeldaTotal);
 }
 
 function FnDatosepigrafe($ID)
@@ -191,13 +210,12 @@ function FnDatosepigrafe($ID)
 }
 
 
-
-$objPHPExcel->getActiveSheet()->getStyle('A6:AD6')->getFont()->getColor()->setARGB(PHPExcel_Style_Color::COLOR_WHITE);
+$objPHPExcel->getActiveSheet()->getStyle('A6:AD6')->applyFromArray($styleArrayColorText);
 $objPHPExcel->getActiveSheet()->getStyle('A6:AD6')->getFont()->setSize(10);
 $objPHPExcel->getActiveSheet()->getStyle('A6:AD6')->getFont()->setBold(true);
 
 //Número
-$objPHPExcel->getActiveSheet()->getStyle('G7:AD' . $t)->getNumberFormat()->setFormatCode('#,##0.00');
+$objPHPExcel->getActiveSheet()->getStyle('G7:AD' . $t)->applyFromArray($styleArrayContab);
 
 //$objPHPExcel->getActiveSheet()->getStyle('E'.$t.':H'.$t)->getFont()->setSize(14);
 //$objPHPExcel->getActiveSheet()->getStyle('E'.$t.':H'.$t)->getFont()->setBold(true);
@@ -237,19 +255,14 @@ $objPHPExcel->getActiveSheet()->getColumnDimension('AB')->setAutoSize(true);
 $objPHPExcel->getActiveSheet()->getColumnDimension('AC')->setAutoSize(true);
 $objPHPExcel->getActiveSheet()->getColumnDimension('AD')->setAutoSize(true);
 
-$objPHPExcel->getActiveSheet()->getStyle('A6:AD6')->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
-$objPHPExcel->getActiveSheet()->getStyle('A6:AD6')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+$objPHPExcel->getActiveSheet()->getStyle('A6:AD6')->applyFromArray($styleArrayAling);
 
-$objPHPExcel->getActiveSheet()->getStyle('A1:A4')->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
-
-$objPHPExcel->getActiveSheet()->getStyle('A7:AD' . $t)->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
-$objPHPExcel->getActiveSheet()->getStyle('A7:AD' . $t)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+$objPHPExcel->getActiveSheet()->getStyle('A7:AD' . $t)->applyFromArray($styleArrayAling);
 
 $objPHPExcel->getActiveSheet()->getDefaultRowDimension()->setRowHeight(15);
 
 
-
-cellColor('A6:AD6', '204CAF');
+$objPHPExcel->getActiveSheet()->getStyle('A6:AD6')->applyFromArray($styleArrayCelda);
 for ($c = 8; $c <= $r;) {
     cellColor('A' . $c . ':AD' . $c . '', 'DCE6F1');
     $c = $c + 2;
@@ -259,37 +272,25 @@ for ($c = 8; $c <= $r;) {
 
 
 // Rename worksheet
-echo date('H:i:s'), " Renombrando hoja de trabajo ", EOL;
 $objPHPExcel->getActiveSheet()->setTitle('PPTO');
 
 // Set active sheet index to the first sheet, so Excel opens this as the first sheet
 $objPHPExcel->setActiveSheetIndex(0);
 
 // Save Excel 2007 file
-echo date('H:i:s'), " Guardando el documento en formato Office 2010 ", EOL;
 $callStartTime = microtime(true);
 
-$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
-//$objWriter->save(str_replace('.php', '.xlsx', __FILE__));
-//$objWriter->setPreCalculateFormulas(true);
-//$objWriter->save($file.'.xlsx');
-//$objWriter->save("php://output");
+// Crear un objeto Writer
+$writer = new Xlsx($objPHPExcel);
+// Almacenar el archivo Excel en un búfer de salida
+ob_start();
+$writer->save('php://output');
+$excelData = ob_get_clean();
 
-$objWriter->save('excel/' . $file . '.xlsx');
+// Configurar las cabeceras para la descarga del archivo
+header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+header('Content-Disposition: attachment;filename="'.$file.'_' . date("d/m/Y") . '.xlsx"');
+header('Cache-Control: max-age=0');
 
-$callEndTime = microtime(true);
-$callTime = $callEndTime - $callStartTime;
-
-//echo date('H:i:s') , " Documento guardado en: " , str_replace('.php', '.xlsx', pathinfo($file, PATHINFO_BASENAME)) , EOL;
-echo date('H:i:s'), ' Tiempo de ejecución ', sprintf('%.4f', $callTime), " seconds", EOL;
-// Echo memory usage
-echo date('H:i:s'), ' Memoria usada en la ejecución: ', (memory_get_usage(true) / 1024 / 1024), " MB", EOL;
-
-
-
-// Echo memory peak usage
-echo date('H:i:s'), " Pico de memoria usada: ", (memory_get_peak_usage(true) / 1024 / 1024), " MB", EOL;
-
-
-header("Location: download_excel.php?file=" . $file . ".xlsx ");
-exit();
+// Enviar el archivo Excel al navegador
+echo $excelData;

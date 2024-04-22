@@ -61,7 +61,7 @@ if (isset($archivo) && $file_info['error'] == UPLOAD_ERR_OK) {
             $motgasto   = utf8_decode(trim($data[6]));
 
             if($linea!='' && $cuentajde!='' && $epigrafe!='' && $clave!='' && $desgasto!='' && $motgasto!='' ){
-                    $ITBEPI = db_query("INSERT INTO tb_mkt_epigrafes (cuentatg,cuentajde,epigrafe,clave,desgasto,motgasto)VALUES('".$cuentatg."','".$cuentajde."','".$epigrafe."','".$clave."','".$desgasto."','".$motgasto."')");
+                    $ITBEPI = db_query("INSERT INTO tb_mkt_epigrafes (area,cuentatg,cuentajde,epigrafe,clave,desgasto,motgasto)VALUES('mkt','".$cuentatg."','".$cuentajde."','".$epigrafe."','".$clave."','".$desgasto."','".$motgasto."')");
             }else{
                 $ar['msj'] = "<strong>Error!</strong> Se encontraron datos vacios, validar.";
                 $ar['alerta'] = 'error';

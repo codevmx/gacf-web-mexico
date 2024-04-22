@@ -81,7 +81,7 @@
                                 <h5 class="page-title mt-3">Paso 2: Pre-Visualización de Plantilla para ingresar
                                     importes
                                     PPTO</h5>
-                                <a href="/gacf-web-mexico/presupuesto/download-mkt-plantilla.php">
+                                <a href="/gacf-web-mexico/presupuesto/pages/download-mkt-plantilla.php">
                                     <button class="btn btn-warning" type="button"><i class="bi bi-cloud-download"></i>
                                         Descargar Plantilla</button>
                                 </a>
