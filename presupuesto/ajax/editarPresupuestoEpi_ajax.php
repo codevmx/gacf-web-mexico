@@ -17,84 +17,84 @@ foreach ($BTBPPTOF as $key) {
                     <td>
                         <div class="mb-3">
                             <div class="input-group flex-nowrap">
-                            <input class="form-control" type="text" min="0" id="valpptoene" name="valpptoene" value="' . $key['pptoene'] . '" onchange="FnSumaCampos()" />
+                            <input class="form-control" type="text" min="0" id="valppto1"  name="valpptoene" value="' . $key['pptoene'] . '" onchange="FnCopiarCampos(1)" />
                             </div>
                         </div>
                     </td>
                     <td>
                         <div class="mb-3">
                             <div class="input-group flex-nowrap">
-                                <input class="form-control" type="text" min="0" id="valpptofeb" name="valpptofeb" value="' . $key['pptofeb'] . '" onchange="FnSumaCampos()"/>
+                                <input class="form-control" type="text" min="0" id="valppto2" name="valpptofeb" value="' . $key['pptofeb'] . '" onchange="FnCopiarCampos(2)"/>
                             </div>
                         </div>
                     </td>
                     <td>
                         <div class="mb-3">
                             <div class="input-group flex-nowrap">
-                                <input class="form-control" type="text" min="0" id="valpptomar" name="valpptomar" value="' . $key['pptomar'] . '" onchange="FnSumaCampos()"/>
+                                <input class="form-control" type="text" min="0" id="valppto3" name="valpptomar" value="' . $key['pptomar'] . '" onchange="FnCopiarCampos(3)"/>
                             </div>
                         </div>
                     </td>
                     <td>
                         <div class="mb-3">
                             <div class="input-group flex-nowrap">
-                                <input class="form-control" type="text" min="0" id="valpptoabr" name="valpptoabr" value="' . $key['pptoabr'] . '" onchange="FnSumaCampos()"/>
+                                <input class="form-control" type="text" min="0" id="valppto4" name="valpptoabr" value="' . $key['pptoabr'] . '" onchange="FnCopiarCampos(4)"/>
                             </div>
                         </div>
                     </td>
                     <td>
                         <div class="mb-3">
                             <div class="input-group flex-nowrap">
-                                <input class="form-control" type="text" min="0" id="valpptomay" name="valpptomay" value="' . $key['pptomay'] . '" onchange="FnSumaCampos()"/>
+                                <input class="form-control" type="text" min="0" id="valppto5" name="valpptomay" value="' . $key['pptomay'] . '" onchange="FnCopiarCampos(5)"/>
                             </div>
                         </div>
                     </td>
                     <td>
                         <div class="mb-3">
                             <div class="input-group flex-nowrap">
-                                <input class="form-control" type="text" min="0" id="valpptojun" name="valpptojun" value="' . $key['pptojun'] . '" onchange="FnSumaCampos()"/>
+                                <input class="form-control" type="text" min="0" id="valppto6" name="valpptojun" value="' . $key['pptojun'] . '" onchange="FnCopiarCampos(6)"/>
                             </div>
                         </div>
                     </td>
                     <td>
                         <div class="mb-3">
                             <div class="input-group flex-nowrap">
-                                <input class="form-control" type="text" min="0" id="valpptojul" name="valpptojul" value="' . $key['pptojul'] . '" onchange="FnSumaCampos()"/>
+                                <input class="form-control" type="text" min="0" id="valppto7" name="valpptojul" value="' . $key['pptojul'] . '" onchange="FnCopiarCampos(7)"/>
                             </div>
                         </div>
                     </td>
                     <td>
                         <div class="mb-3">
                             <div class="input-group flex-nowrap">
-                                <input class="form-control" type="text" min="0" id="valpptoago" name="valpptoago" value="' . $key['pptoago'] . '" onchange="FnSumaCampos()"/>
+                                <input class="form-control" type="text" min="0" id="valppto8" name="valpptoago" value="' . $key['pptoago'] . '" onchange="FnCopiarCampos(8)"/>
                             </div>
                         </div>
                     </td>
                     <td>
                         <div class="mb-3">
                             <div class="input-group flex-nowrap">
-                                <input class="form-control" type="text" min="0" id="valpptosep" name="valpptosep" value="' . $key['pptosep'] . '" onchange="FnSumaCampos()"/>
+                                <input class="form-control" type="text" min="0" id="valppto9" name="valpptosep" value="' . $key['pptosep'] . '" onchange="FnCopiarCampos(9)"/>
                             </div>
                         </div>
                     </td>
                     <td>
                         <div class="mb-3">
                             <div class="input-group flex-nowrap">
-                                <input class="form-control" type="text" min="0" id="valpptooct" name="valpptooct" value="' . $key['pptooct'] . '" onchange="FnSumaCampos()"/>
+                                <input class="form-control" type="text" min="0" id="valppto10" name="valpptooct" value="' . $key['pptooct'] . '" onchange="FnCopiarCampos(10)"/>
                             </div>
                         </div>
                     </td>
                     <td>
                         <div class="mb-3">
                             <div class="input-group flex-nowrap">
-                                <input class="form-control" type="text" min="0" id="valpptonov" name="valpptonov" value="' . $key['pptonov'] . '" onchange="FnSumaCampos()"/>
+                                <input class="form-control" type="text" min="0" id="valppto11" name="valpptonov" value="' . $key['pptonov'] . '" onchange="FnCopiarCampos(11)"/>
                             </div>
                         </div>
                     </td>
                     <td>
                         <div class="mb-3">
                             <div class="input-group flex-nowrap">
-                                <input class="form-control" type="text" min="0" id="valpptodic" name="valpptodic" value="' . $key['pptodic'] . '" onchange="FnSumaCampos()"/>
+                                <input class="form-control" type="text" min="0" id="valppto12" name="valpptodic" value="' . $key['pptodic'] . '" onchange="FnCopiarCampos(12)"/>
                             </div>
                         </div>
                     </td>

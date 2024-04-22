@@ -157,7 +157,7 @@
                     </div>
                     <div class="progress mt-3" id="barProgressimportes" style="display: none;"></div>
                     <div class="table-responsive" id="divTablaEditarImportes" style="display:none;">
-                        <table class="table table-striped dt-responsive nowrap w-100 mt-3">
+                        <table class="table table-striped dt-responsive nowrap w-100 mt-3" id="editarPresupesto">
                             <thead class="table-dark text-center">
                                 <tr>
                                     <th class="col-1">Enero</th>

@@ -104,6 +104,10 @@ $(document).ready(function () {
         modal.find('.modal-body #keyepig').val(id);
         $("#resultadoppto").empty('');
         VisualizarImportes(id);
+        $("#editarPresupesto input").each(function () {
+            var valor = this.id;
+            alert(valor);
+        });
     });
 
     $("#FileInputExcel").change(function () {
@@ -114,7 +118,7 @@ $(document).ready(function () {
 });
 
 function FnSumaCampos() {
-    var suma = parseInt($("#valpptoene").val()) + parseInt($("#valpptofeb").val()) + parseInt($("#valpptomar").val()) + parseInt($("#valpptoabr").val()) + parseInt($("#valpptomay").val()) + parseInt($("#valpptojun").val()) + parseInt($("#valpptojul").val()) + parseInt($("#valpptoago").val()) + parseInt($("#valpptosep").val()) + parseInt($("#valpptooct").val()) + parseInt($("#valpptonov").val()) + parseInt($("#valpptodic").val());
+    var suma = parseInt($("#valppto1").val()) + parseInt($("#valppto2").val()) + parseInt($("#valppto3").val()) + parseInt($("#valppto4").val()) + parseInt($("#valppto5").val()) + parseInt($("#valppto6").val()) + parseInt($("#valppto7").val()) + parseInt($("#valppto8").val()) + parseInt($("#valppto9").val()) + parseInt($("#valppto10").val()) + parseInt($("#valppto11").val()) + parseInt($("#valppto12").val());
     $("#valTotal").val(suma);
 }
 
@@ -281,4 +285,21 @@ function FnGuardarPresupuesto() {
         }
 
     });
+}
+
+function FnCopiarCampos($keyMes) {
+    var valor               = $("#valppto"+$keyMes).val();
+    var valpptoene          = valor.replace(/\s/g, "|");
+
+    var final               = valpptoene.split("|");
+
+    for (let index = 0; index < final.length; index+=2) {
+        if (index == 0) {
+            $("#valppto"+$keyMes).val(final[index].replace(/[$,]/g, ''));
+        }else{
+            $keyMes++;
+            $("#valppto"+$keyMes).val(final[index].replace(/[$,]/g, ''));
+        }
+    }
+    FnSumaCampos();
 }
