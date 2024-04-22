@@ -87,7 +87,7 @@ $(document).ready(function () {
         });
 
         if (vacios > 0) {
-            $("#divAlert").html('<div class="alert alert-danger"><h4>Error! <small>Por favor asegurarse de llenar todos los campos obligatorios(*).</small></h4></div>');
+            FnNotificacion('<strong>Error!</strong> Por favor asegurarse de llenar todos los campos obligatorios(*).', 'error');
         } else {
             CrearPresupuesto();
         }
@@ -197,9 +197,6 @@ function CrearPresupuesto() {
             $("#barProgresspas2").fadeOut();
             $("#barProgresspas2").html('');
             if (msj == 'exito') {
-                $('#BtnCrearPPTO').prop('disabled', false);
-                $('#BtnCrearPPTO').prop('disabled', false);
-                $('#BtnCrearPPTO').prop('disabled', false);
                 $("#keyppto").val(idppto);
                 $("#keypptoExcel").val(idppto);
                 window.tablaimportesppto(idppto);
