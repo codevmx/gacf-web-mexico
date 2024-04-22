@@ -81,7 +81,7 @@
                                 <h5 class="page-title mt-3">Paso 2: Pre-Visualización de Plantilla para ingresar
                                     importes
                                     PPTO</h5>
-                                <a href="download_mkt_plantilla.php">
+                                <a href="/gacf-web-mexico/presupuesto/download-mkt-plantilla.php">
                                     <button class="btn btn-warning" type="button"><i class="bi bi-cloud-download"></i>
                                         Descargar Plantilla</button>
                                 </a>
@@ -143,17 +143,17 @@
     aria-hidden="true">
     <div class="modal-dialog modal-full-width">
         <div class="modal-content">
-            <div class="modal-header bg-success text-white">
-                <h4 class="modal-title" id="standard-modalLabel">Agregar de Importes PPTO</h4>
+            <div class="modal-header bg-info text-white">
+                <h4 class="modal-title" id="standard-modalLabel">Agregar Importes de Presupuesto</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form action="" id="editarppto-form" method="POST">
                     <input class="form-control" type="hidden" name="keyepig" id="keyepig" readonly>
                     <div class="col-md-12">
-                        <label for="anio" class="form-label">Ingresar todos los datos</label>
+                        <label for="anio" class="form-label">Aquí puede copiar una fila completa desde un archivo Excel, respetando el orden y numero de columnas establecidas.</label>
                         <input class="form-control" type="text" name="celda" id="celda"
-                            placeholder="Ingrese datos de copiado">
+                            placeholder="Ingresar datos de copiado">
                     </div>
                     <div class="progress mt-3" id="barProgressimportes" style="display: none;"></div>
                     <div class="table-responsive" id="divTablaEditarImportes" style="display:none;">
@@ -182,7 +182,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-success" onclick="FnGuardarPresupuesto()">Confirmar</button>
+                <button type="button" class="btn btn-info" onclick="FnGuardarPresupuesto()">Confirmar <i class="bi bi-check2-all"></i></button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

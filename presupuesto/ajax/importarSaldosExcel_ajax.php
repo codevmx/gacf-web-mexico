@@ -4,14 +4,14 @@ include ("../../conexion/conexion.php");
 include ("../../conexion/functions.php");
 
 $keypptoExcel = $_POST['keypptoExcel'];
-$UploadDirectory = '../CSV/PTTOARCH/';
+$UploadDirectory = '../csv/ppto/';
 vaciarCarpeta($UploadDirectory);
 $Random_Number = rand(0, 9999999999);
 $archivo = strtolower($_FILES['FileInputExcel']['name']); // Nombre del archivo con extensión
 $File_Ext = pathinfo($archivo, PATHINFO_EXTENSION); // Obtenemos la extensión
 $file_info = pathinfo($archivo); // Obtenemos información sobre el archivo
 $extraefile = explode('.' , $archivo);
-$NewFileName = 'CargaSaldos_'.$keypptoExcel.'_'. $Random_Number . '.'. $File_Ext;
+$NewFileName = 'Presini_'.$keypptoExcel.'_'. $Random_Number . '.'. $File_Ext;
 $creadir = @mkdir($UploadDirectory, 0777, true);
 $datos = [];
 

@@ -4,7 +4,7 @@ include ("../../conexion/conexion.php");
 include ("../../conexion/functions.php");
 
 $date_rec   = date('Ymd') . '_' . date('His');
-$ubi_arch   = '../CSV/Epigrafes/';
+$ubi_arch   = '../csv/Epigrafes/';
 vaciarCarpeta($ubi_arch);
 $usuario    = trim($_POST['usuario']);
 $archivo    = strtolower($_FILES['FileInput2']['name']); // Nombre del archivo con extensión
