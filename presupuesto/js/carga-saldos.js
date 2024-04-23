@@ -201,9 +201,10 @@ function CrearPresupuesto() {
             $("#barProgresspas2").fadeOut();
             $("#barProgresspas2").html('');
             if (msj == 'exito') {
+                alert (idppto);
                 $("#keyppto").val(idppto);
                 $("#keypptoExcel").val(idppto);
-                window.tablaimportesppto(idppto);
+                window.tablaimportesppto($("#keyppto").val());
                 $("#divPaso2").fadeIn();
                 $("#BtnCrearPPTO").fadeOut();
                 FnNotificacion('Se genero exitosamente la plantilla!', 'success');
@@ -290,7 +291,6 @@ function FnGuardarPresupuesto() {
 function FnCopiarCampos($keyMes) {
     var valor               = $("#valppto"+$keyMes).val();
     var valpptoene          = valor.replace(/\s/g, "|");
-
     var final               = valpptoene.split("|");
 
     for (let index = 0; index < final.length; index+=2) {

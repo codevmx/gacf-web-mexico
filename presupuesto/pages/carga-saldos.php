@@ -1,4 +1,5 @@
-<?php require_once ("../../header.php"); ?>
+<?php require_once ("../../header.php");
+?>
 
 <script src="/gacf-web-mexico/presupuesto/js/carga-saldos.js"></script>
 
@@ -151,7 +152,8 @@
                 <form action="" id="editarppto-form" method="POST">
                     <input class="form-control" type="hidden" name="keyepig" id="keyepig" readonly>
                     <div class="col-md-12">
-                        <label for="anio" class="form-label">Aquí puede copiar una fila completa desde un archivo Excel, respetando el orden y numero de columnas establecidas.</label>
+                        <label for="anio" class="form-label">Aquí puede copiar una fila completa desde un archivo Excel,
+                            respetando el orden y numero de columnas establecidas.</label>
                         <input class="form-control" type="text" name="celda" id="celda"
                             placeholder="Ingresar datos de copiado">
                     </div>
@@ -174,7 +176,7 @@
                                     <th class="col-1">Diciembre</th>
                                 </tr>
                             </thead>
-                            <tbody id="resultadoppto" >
+                            <tbody id="resultadoppto">
                             </tbody>
                         </table>
                     </div>
@@ -182,7 +184,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-info" onclick="FnGuardarPresupuesto()">Confirmar <i class="bi bi-check2-all"></i></button>
+                <button type="button" class="btn btn-info" onclick="FnGuardarPresupuesto()">Confirmar <i
+                        class="bi bi-check2-all"></i></button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

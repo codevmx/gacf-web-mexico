@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.tablaimportesppto = function (datos) {
 
+        console.log(datos);
+
         if (datos != '') {
             if (!$.fn.DataTable.isDataTable('#datatables-importesppto')) {
                 
