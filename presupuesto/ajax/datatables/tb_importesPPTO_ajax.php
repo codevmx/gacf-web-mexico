@@ -7,7 +7,6 @@ include ("../../../conexion/functions.php");
 $tabla  = '';
 $idppto = $_POST[0];
 
-$_SESSION['POST'] = $_POST;
 
 if ($idppto != '') {
     $BTBPPTOF = "SELECT * FROM tb_mkt_presupuesto_det WHERE ID_presupuesto = " . $idppto . " ";
