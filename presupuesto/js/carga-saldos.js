@@ -4,57 +4,21 @@ $(document).ready(function () {
     // Funcion para repartir datos de un excel
     $('#celda').on('input', function () {
         // Obtener el valor del campo de entrada
-        var valor = $(this).val();
-        var textoSinEspacios = valor.trim();
-        // Verificar si el campo está lleno o vacío
-        if (valor) {
+        var valor       = $(this).val();
+        // var valpptoene  = valor.replace(/\s/g, "|");
+        var final       = valor.split(" ");
 
-            var valpptoene = textoSinEspacios.split(" ")[0];
-            $("#valpptoene").val(valpptoene.replace(/,/g, ''));
+        let mes         = 1
 
-            var pptofeb = textoSinEspacios.split(" ")[2];
-            $("#valpptofeb").val(pptofeb.replace(/,/g, ''));
-
-            var pptomar = textoSinEspacios.split(" ")[4];
-            $("#valpptomar").val(pptomar.replace(/,/g, ''));
-
-            var pptoabr = textoSinEspacios.split(" ")[6];
-            $("#valpptoabr").val(pptoabr.replace(/,/g, ''));
-
-            var pptomay = textoSinEspacios.split(" ")[8];
-            $("#valpptomay").val(pptomay.replace(/,/g, ''));
-
-            var pptojun = textoSinEspacios.split(" ")[10];
-            $("#valpptojun").val(pptojun.replace(/,/g, ''));
-
-            var pptojul = textoSinEspacios.split(" ")[12];
-            $("#valpptojul").val(pptojul.replace(/,/g, ''));
-
-            var pptoago = textoSinEspacios.split(" ")[14];
-            $("#valpptoago").val(pptoago.replace(/,/g, ''));
-
-            var pptosep = textoSinEspacios.split(" ")[16];
-            $("#valpptosep").val(pptosep.replace(/,/g, ''));
-
-            var pptooct = textoSinEspacios.split(" ")[18];
-            $("#valpptooct").val(pptooct.replace(/,/g, ''));
-
-            var pptonov = textoSinEspacios.split(" ")[20];
-            $("#valpptonov").val(pptonov.replace(/,/g, ''));
-
-            var pptodic = textoSinEspacios.split(" ")[22];
-            $("#valpptodic").val(pptodic.replace(/,/g, ''));
-
-            if (textoSinEspacios.split(" ").length > 23) {
-                var valTotal = textoSinEspacios.split(" ")[24];
-                $("#valTotal").val(valTotal.replace(/,/g, ''));
+        for (let index = 0; index < final.length; index += 2) {
+            if (index == 0) {
+                $("#valppto" + mes).val((final[index].replace(/[$,]/g, '')).trim());
             } else {
-                FnSumaCampos();
+                mes++;
+                $("#valppto" + mes).val((final[index].replace(/[$,]/g, '')).trim());
             }
-
-            $(this).val('');
-
         }
+        FnSumaCampos();
 
         $(this).val('');
     });
@@ -106,7 +70,6 @@ $(document).ready(function () {
         VisualizarImportes(id);
         $("#editarPresupesto input").each(function () {
             var valor = this.id;
-            alert(valor);
         });
     });
 
@@ -201,7 +164,6 @@ function CrearPresupuesto() {
             $("#barProgresspas2").fadeOut();
             $("#barProgresspas2").html('');
             if (msj == 'exito') {
-                alert (idppto);
                 $("#keyppto").val(idppto);
                 $("#keypptoExcel").val(idppto);
                 window.tablaimportesppto($("#keyppto").val());
@@ -211,7 +173,7 @@ function CrearPresupuesto() {
                 //$("#datatables-importesppto").DataTable().ajax.reload(); 
                 //GenerarPlantilla(idppto);
 
-            }else{
+            } else {
                 $('#BtnCrearPPTO').prop('disabled', false);
                 FnNotificacion('Tuvimos problemas al generar la plantilla', 'error');
             }
@@ -289,16 +251,16 @@ function FnGuardarPresupuesto() {
 }
 
 function FnCopiarCampos($keyMes) {
-    var valor               = $("#valppto"+$keyMes).val();
-    var valpptoene          = valor.replace(/\s/g, "|");
-    var final               = valpptoene.split("|");
+    var valor = $("#valppto" + $keyMes).val();
+    var valpptoene = valor.replace(/\s/g, "|");
+    var final = valpptoene.split("|");
 
-    for (let index = 0; index < final.length; index+=2) {
+    for (let index = 0; index < final.length; index += 2) {
         if (index == 0) {
-            $("#valppto"+$keyMes).val(final[index].replace(/[$,]/g, ''));
-        }else{
+            $("#valppto" + $keyMes).val(final[index].replace(/[$,]/g, ''));
+        } else {
             $keyMes++;
-            $("#valppto"+$keyMes).val(final[index].replace(/[$,]/g, ''));
+            $("#valppto" + $keyMes).val(final[index].replace(/[$,]/g, ''));
         }
     }
     FnSumaCampos();

@@ -43,7 +43,7 @@ function FnCTPerfil($ID){
     $RTBNIV             = db_select("SELECT * FROM niveles WHERE id_nivel=".$ID." ORDER BY id_nivel ASC ");
     $data['count']      = count($RTBNIV);
 
-    $RTBUSERS           = $RTBUSERS[0];
+    $RTBUSERS           = $RTBNIV[0];
     $data['nivel']      = trim($RTBUSERS['nivel']);
     $data['nombre']     = trim($RTBUSERS['nombre']);
 
