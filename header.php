@@ -2,7 +2,14 @@
 
 include("conexion/conexion.php");
 include("conexion/conexionODBC.php");
+
+if (!loggedin()) {
+    header("Location: ../gacf");
+    exit();
+}
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -315,7 +322,7 @@ include("conexion/conexionODBC.php");
                                 <img src="/gacf-web-mexico/assets/images/users/avatar-1.jpg" alt="user-image" width="32" class="rounded-circle">
                             </span>
                             <span class="d-lg-flex flex-column gap-1 d-none">
-                                <h5 class="my-0">Doris Larson</h5>
+                                <h5 class="my-0"><?=ucfirst($_SESSION['Idusername-signin'])?></h5>
                                 <h6 class="my-0 fw-normal">Founder</h6>
                             </span>
                         </a>
@@ -403,7 +410,7 @@ include("conexion/conexionODBC.php");
                             <img src="/gacf-web-mexico/assets/images/users/avatar-1.jpg" alt="user-image" height="42" class="rounded-circle shadow">
                         </div>
                         <div class="flex-grow-1 ms-2">
-                            <span class="fw-semibold fs-15 d-block">Doris Larson</span>
+                            <span class="fw-semibold fs-15 d-block"><?=ucfirst($_SESSION['Idusername-signin'])?></span>
                             <span class="fs-13">Founder</span>
                         </div>
                         <div class="ms-auto">

@@ -62,7 +62,7 @@ function db_select($query)
 
 function loggedin()
 {
-	if (isset($_SESSION['username'])) //||isset($_COOKIE['username'])
+	if (isset($_SESSION['Idusername-signin'])) //||isset($_COOKIE['username'])
 	{
 		$loggedin = TRUE;
 	} else {
