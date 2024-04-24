@@ -6,7 +6,7 @@ echo "<pre>";
 print_r($_SESSION);
 echo "</pre>";
 
-$sql 	= "SELECT * FROM tb_usuarios WHERE username='marketing'";
+$sql 	= "SELECT * FROM tb_usuarios WHERE username='marketingpro'";
 $query 	= db_select($sql);
 
 echo "<pre>";
