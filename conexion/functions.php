@@ -2,7 +2,7 @@
 <?php
 function FnCTUsuarios($ID,$accion){
 
-    $ID = (strpos(trim($ID),'U-')!== false) ? substr(trim($ID),2,10) : trim($ID);
+    $ID = (strpos(trim($ID),'U-')!== false) ? substr(trim($ID),2,0) : trim($ID);
 
     switch ($accion) {
         case 'C':
