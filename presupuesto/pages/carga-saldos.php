@@ -162,18 +162,18 @@
                         <table class="table table-striped dt-responsive nowrap w-100 mt-3" id="editarPresupesto">
                             <thead class="table-dark text-center">
                                 <tr>
-                                    <th class="col-1">Enero</th>
-                                    <th class="col-1">Febrero</th>
-                                    <th class="col-1">Marzo</th>
-                                    <th class="col-1">Abril</th>
-                                    <th class="col-1">Mayo</th>
-                                    <th class="col-1">Junio</th>
-                                    <th class="col-1">Julio</th>
-                                    <th class="col-1">Agosto</th>
-                                    <th class="col-1">Septiembre</th>
-                                    <th class="col-1">Octubre</th>
-                                    <th class="col-1">Noviembre</th>
-                                    <th class="col-1">Diciembre</th>
+                                    <th class="col-1">PTTO <br> Enero</th>
+                                    <th class="col-1">PTTO <br> Febrero</th>
+                                    <th class="col-1">PTTO <br> Marzo</th>
+                                    <th class="col-1">PTTO <br> Abril</th>
+                                    <th class="col-1">PTTO <br> Mayo</th>
+                                    <th class="col-1">PTTO <br> Junio</th>
+                                    <th class="col-1">PTTO <br> Julio</th>
+                                    <th class="col-1">PTTO <br> Agosto</th>
+                                    <th class="col-1">PTTO <br> Septiembre</th>
+                                    <th class="col-1">PTTO <br> Octubre</th>
+                                    <th class="col-1">PTTO <br> Noviembre</th>
+                                    <th class="col-1">PTTO <br> Diciembre</th>
                                 </tr>
                             </thead>
                             <tbody id="resultadoppto">

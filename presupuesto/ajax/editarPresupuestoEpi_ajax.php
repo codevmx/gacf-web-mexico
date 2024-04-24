@@ -115,7 +115,7 @@ foreach ($BTBPPTOF as $key) {
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>TOTAL</td>
+                    <td>PTTO TOTAL</td>
                         <td>
                         <div class="mb-3">
                             <div class="input-group flex-nowrap">
