@@ -3,8 +3,6 @@
 include("../conexion/conexion.php");
 include("../conexion/functions.php");
 
-setcookie('tk_sesion', '', time() - 3600);
-
 // Verificar si la cookie de sesión está presente y es válida
 if (isset($_COOKIE['tk_sesion'])) {
     // La cookie de sesión está presente, puedes hacer cualquier validación adicional aquí
