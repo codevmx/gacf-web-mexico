@@ -3,7 +3,13 @@
 include("../../conexion/conexion.php");
 include("../../conexion/functions.php");
 
-$username = (strpos(trim($_POST['Idusername-signin']),'U-')!== false) ? substr(trim($_POST['Idusername-signin']),2,10) : trim($_POST['Idusername-signin']);
+$expuser = explode('-',trim($_POST['Idusername-signin']));
+
+if(strpos(trim($_POST['Idusername-signin']),'U-')!== false){
+	$username = $expuser[1];
+}else{
+	$username = trim($_POST['Idusername-signin']);
+}
 
 $password = protect(htmlentities($_POST['Idpassword-signin'])); //md5($_POST['Idpassword-signin']);
 
