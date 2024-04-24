@@ -61,8 +61,8 @@ $(document).ready(function () {
 
     $('#BtnRefreshPPTO').click(function () {
 
-        $('#datappto-form input').prop('readonly', false);
-        $('select.select2').prop('disabled', false).trigger('change.select2');
+        $('#datappto-form input').prop('disabled', false);
+        $('#datappto-form select').prop('disabled', false);
 
         $("#divPaso2").hide("slow");
         $("#BtnRefreshPPTO").hide("slow");
@@ -111,7 +111,7 @@ function FnCargarArchExcel($cc) {
         dataType: "html",
         contentType: false,
         processData: false,
-        url: "/gacf-web-mexico/presupuesto/ajax/importarSaldosExcel_ajax.php?cc="+$cc,
+        url: "/gacf-web-mexico/presupuesto/ajax/importarSaldosExcel_ajax.php?cc=" + $cc,
         beforeSend: function () {
             $("#barProgress").fadeIn();
             $("#barProgress").html('<div class="progress-bar progress-bar-striped progress-bar-animated" style="width:100%">Cargando ....</div>');
@@ -190,8 +190,8 @@ function CrearPresupuesto() {
                 $("#BtnCrearPPTO").hide("slow");
                 $("#BtnRefreshPPTO").show("slow");
 
-                $('#datappto-form input').prop('readonly', true);
-                $('#datappto-form select .select2').prop('disabled', true).trigger('change.select2');
+                $('#datappto-form input').prop('disabled', true);
+                $('#datappto-form select').prop('disabled', true);
 
                 FnNotificacion('Se genero exitosamente la plantilla!', 'success');
                 //$("#datatables-importesppto").DataTable().ajax.reload(); 
