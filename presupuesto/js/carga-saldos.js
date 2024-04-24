@@ -61,7 +61,9 @@ $(document).ready(function () {
 
     $('#BtnRefreshPPTO').click(function () {
 
-        $('#datappto-form input, #datappto-form select').prop('readonly', false);
+        $('#datappto-form input').prop('readonly', false);
+        $('select.select2').prop('disabled', false).trigger('change.select2');
+
         $("#divPaso2").hide("slow");
         $("#BtnRefreshPPTO").hide("slow");
         $("#BtnCrearPPTO").show("slow");
@@ -188,7 +190,8 @@ function CrearPresupuesto() {
                 $("#BtnCrearPPTO").hide("slow");
                 $("#BtnRefreshPPTO").show("slow");
 
-                $('#datappto-form input, #datappto-form select').prop('readonly', true);
+                $('#datappto-form input').prop('readonly', true);
+                $('select.select2').prop('disabled', true).trigger('change.select2');
 
                 FnNotificacion('Se genero exitosamente la plantilla!', 'success');
                 //$("#datatables-importesppto").DataTable().ajax.reload(); 
