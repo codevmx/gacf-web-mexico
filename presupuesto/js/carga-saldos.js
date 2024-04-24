@@ -4,11 +4,11 @@ $(document).ready(function () {
     // Funcion para repartir datos de un excel
     $('#celda').on('input', function () {
         // Obtener el valor del campo de entrada
-        var valor       = $(this).val();
+        var valor = $(this).val();
         // var valpptoene  = valor.replace(/\s/g, "|");
-        var final       = valor.split(" ");
+        var final = valor.split(" ");
 
-        let mes         = 1
+        let mes = 1
 
         for (let index = 0; index < final.length; index += 2) {
             if (index == 0) {
@@ -59,6 +59,18 @@ $(document).ready(function () {
 
     });
 
+    $('#BtnRefreshPPTO').click(function () {
+        $("#divPaso2").hide("slow");
+        $("#BtnRefreshPPTO").hide("slow");
+        $("#BtnCrearPPTO").show("slow");
+        $('#datappto-form')[0].reset();
+        $('#inputCentroC').val(null).trigger('change');
+        $('#inputEmpresa').val(null).trigger('change');
+        $("#keyppto").val('');
+        $('#datatables-importesppto').DataTable().destroy();
+
+    });
+
     $('#modalppto').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Button that triggered the modal 
         var id = button.data('id');
@@ -75,7 +87,8 @@ $(document).ready(function () {
 
     $("#FileInputExcel").change(function () {
         //alert('Hola');
-        FnCargarArchExcel();
+        var cc = $('#inputCentroC').val();
+        FnCargarArchExcel(cc);
     });
 
 });
@@ -86,7 +99,7 @@ function FnSumaCampos() {
 }
 
 
-function FnCargarArchExcel() {
+function FnCargarArchExcel($cc) {
     var datas = new FormData($("#formExcel")[0]);
     $.ajax({
         data: datas,
@@ -94,7 +107,7 @@ function FnCargarArchExcel() {
         dataType: "html",
         contentType: false,
         processData: false,
-        url: "/gacf-web-mexico/presupuesto/ajax/importarSaldosExcel_ajax.php",
+        url: "/gacf-web-mexico/presupuesto/ajax/importarSaldosExcel_ajax.php?cc="+$cc,
         beforeSend: function () {
             $("#barProgress").fadeIn();
             $("#barProgress").html('<div class="progress-bar progress-bar-striped progress-bar-animated" style="width:100%">Cargando ....</div>');
@@ -155,20 +168,23 @@ function CrearPresupuesto() {
         beforeSend: function () {
             $("#barProgresspas2").fadeIn();
             $("#barProgresspas2").html('<div class="progress-bar progress-bar-striped progress-bar-animated" style="width:100%">Cargando ....</div>');
-            $('#BtnCrearPPTO').prop('disabled', true);
+            //$('#BtnCrearPPTO').prop('disabled', true);
         },
         success: function (data) {
             var json = eval("(" + data + ")");
             msj = json.msj;
             idppto = json.idppto;
+
             $("#barProgresspas2").fadeOut();
             $("#barProgresspas2").html('');
             if (msj == 'exito') {
                 $("#keyppto").val(idppto);
                 $("#keypptoExcel").val(idppto);
                 window.tablaimportesppto($("#keyppto").val());
-                $("#divPaso2").fadeIn();
-                $("#BtnCrearPPTO").fadeOut();
+                $("#divPaso2").show("slow");
+                //('#BtnCrearPPTO').prop('disabled', false);
+                $("#BtnCrearPPTO").hide("slow");
+                $("#BtnRefreshPPTO").show("slow");
                 FnNotificacion('Se genero exitosamente la plantilla!', 'success');
                 //$("#datatables-importesppto").DataTable().ajax.reload(); 
                 //GenerarPlantilla(idppto);
