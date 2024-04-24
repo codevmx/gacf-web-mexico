@@ -7,6 +7,8 @@ include ("../../../conexion/functions.php");
 $tabla  = '';
 $idppto = $_POST[0];
 
+$_SESSION['prueba'] = 'PRUEBA'.$_POST[0];
+
 
 if ($idppto != '') {
     $BTBPPTOF = "SELECT * FROM tb_mkt_presupuesto_det WHERE ID_presupuesto = " . $idppto . " ";

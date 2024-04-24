@@ -191,7 +191,7 @@ function CrearPresupuesto() {
                 $("#BtnRefreshPPTO").show("slow");
 
                 $('#datappto-form input').prop('readonly', true);
-                $('select.select2').prop('disabled', true).trigger('change.select2');
+                $('#datappto-form select .select2').prop('disabled', true).trigger('change.select2');
 
                 FnNotificacion('Se genero exitosamente la plantilla!', 'success');
                 //$("#datatables-importesppto").DataTable().ajax.reload(); 

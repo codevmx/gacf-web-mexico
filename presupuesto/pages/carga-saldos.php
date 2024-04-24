@@ -72,9 +72,13 @@
                                     </div>
                                 </div>
                             </form>
-                            <div class="col-md-2">
-                                <button type="button" class="btn btn-success" id="BtnCrearPPTO"><i
-                                        class="bi bi-file-ruled"></i> Crear Plantilla</button>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <button type="button" class="btn btn-success" id="BtnCrearPPTO"><i
+                                            class="bi bi-file-ruled"></i> Crear Plantilla</button>
+                                    <button type="button" class="btn btn-success" id="BtnRefreshPPTO" style="display: none;"><i
+                                            class="bi bi-file-ruled"></i> Generar Nueva Plantilla</button>
+                                </div>
                             </div>
                             <div class="progress mt-3" id="barProgresspas2" style="display: none;"></div>
                             <!-- <input class="form-control " type="text" id="buscador" onkeyup="myFunction()" placeholder="Buscar.."> -->
@@ -86,7 +90,7 @@
                                     <button class="btn btn-warning" type="button"><i class="bi bi-cloud-download"></i>
                                         Descargar Plantilla</button>
                                 </a>
-                                <button class="btn btn-success" type="button" data-bs-toggle="modal"
+                                <button class="btn btn-info" type="button" data-bs-toggle="modal"
                                     data-bs-target="#modalpptoImportar">
                                     <i class="bi bi-cloud-upload"></i>
                                     Importar Presupuesto

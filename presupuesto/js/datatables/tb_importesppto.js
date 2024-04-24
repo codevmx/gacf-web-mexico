@@ -63,7 +63,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 });
             } else {
-                $("#datatables-importesppto").DataTable().ajax.reload();
+                $("#datatables-importesppto").DataTable().ajax.reload({
+                    "data": datos
+                });
             }
 
         }
