@@ -322,20 +322,20 @@ if (!loggedin()) {
                                 <img src="/gacf-web-mexico/assets/images/users/avatar-1.jpg" alt="user-image" width="32" class="rounded-circle">
                             </span>
                             <span class="d-lg-flex flex-column gap-1 d-none">
-                                <h5 class="my-0"><?=ucfirst($_SESSION['Idusername-signin'])?></h5>
-                                <h6 class="my-0 fw-normal">Founder</h6>
+                                <h5 class="my-0"><?=strtoupper($_SESSION['Idusername-signin'])?></h5>
+                                <h6 class="my-0 fw-normal"><?=$_SESSION['Idperfil-signin']?></h6>
                             </span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated profile-dropdown">
                             <!-- item-->
                             <div class=" dropdown-header noti-title">
-                                <h6 class="text-overflow m-0">Welcome !</h6>
+                                <h6 class="text-overflow m-0">Bienvenido !</h6>
                             </div>
 
                             <!-- item-->
-                            <a href="#" class="dropdown-item">
+                            <a href="gacf-perfil-usuario" class="dropdown-item">
                                 <i class="ri-account-circle-fill align-middle me-1"></i>
-                                <span>My Account</span>
+                                <span>Mi Cuenta</span>
                             </a>
 
                             <!-- item-->
