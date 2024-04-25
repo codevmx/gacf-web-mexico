@@ -4,7 +4,7 @@ include("conexion/conexion.php");
 include("conexion/conexionODBC.php");
 
 if (!loggedin()) {
-    header("Location: ../gacf");
+    header("Location: gacf");
     exit();
 }
 
