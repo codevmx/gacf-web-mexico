@@ -226,6 +226,7 @@
 <script src="/gacf-web-mexico/presupuesto/js/datatables/tb_epigrafes.js"></script>
 <script src="/gacf-web-mexico/presupuesto/js/datatables/tb_gestionEpigrafes.js"></script>
 <script src="/gacf-web-mexico/presupuesto/js/datatables/tb_importesppto.js"></script>
+<script src="/gacf-web-mexico/presupuesto/js/datatables/tb_resumenPlantillas.js"></script>
 
 </body>
 

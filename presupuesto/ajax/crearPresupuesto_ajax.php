@@ -2,6 +2,7 @@
 
 include("../../conexion/conexion.php");
 include("../../conexion/conexionODBC.php");
+include("../../conexion/functions.php");
 
 $username           = $_SESSION['Idusername-signin'];
 $anio               = $_POST['anio'];
@@ -28,8 +29,8 @@ if(count($BTBPPTOCAB)>0){
 }
 
 
-$BTBPPTO = db_select("SELECT * FROM tb_mkt_presupuesto_det WHERE ID_presupuesto = ".$ITBPPTOCAB." ");
-if(count($BTBPPTO)>0){
+$BTBPPTO = FnDetallePPTO($ITBPPTOCAB,'T');
+if($BTBPPTO['count']>0){
     $ar['msj']      = 'exito';
     $ar['idppto']   = $ITBPPTOCAB;
 }else{

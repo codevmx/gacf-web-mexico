@@ -59,10 +59,9 @@ if(strpos(trim($archivo),$keycc)!== false){
 
             $_SESSION['datos'] = $datos;
 
-            $BTBPPTOF = db_select("SELECT * FROM tb_mkt_presupuesto_det WHERe ID_presupuesto=" . $keypptoExcel . " ");
+            $BTBPPTOF = FnDetallePPTO($keypptoExcel,'T');
             
-
-            foreach ($BTBPPTOF as $key) {
+            foreach ($BTBPPTOF['arraytb'] as $key) {
                 $BTBEPIGRA = db_select("SELECT * FROM tb_mkt_epigrafes WHERe ID=" . $key['ID_epigrafe'] . " ");
 
                 $DATOS = explode(',', trim($datos[$BTBEPIGRA[0]['cuentajde']][$BTBEPIGRA[0]['clave']]));

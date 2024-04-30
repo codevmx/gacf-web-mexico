@@ -95,6 +95,10 @@ $(document).ready(function () {
         FnCargarArchExcel(cc);
     });
 
+    $('#BtnResumenPPTO').click(function () {
+        window.location = 'gacf-resumen-saldos';
+    });
+
 });
 
 function FnSumaCampos() {
