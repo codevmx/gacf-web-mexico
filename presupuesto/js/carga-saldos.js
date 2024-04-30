@@ -275,16 +275,18 @@ function FnGuardarPresupuesto() {
 }
 
 function FnCopiarCampos($keyMes) {
+
     var valor = $("#valppto" + $keyMes).val();
-    var valpptoene = valor.replace(/\s/g, "|");
-    var final = valpptoene.split("|");
+    // var valpptoene  = valor.replace(/\s/g, "|");
+    var final = valor.split(" ");
+    //var final = final.split("|");
 
     for (let index = 0; index < final.length; index += 2) {
         if (index == 0) {
-            $("#valppto" + $keyMes).val(final[index].replace(/[$,]/g, ''));
+            $("#valppto" + $keyMes).val(final[index].replace(/[$,]/g, '').trim());
         } else {
             $keyMes++;
-            $("#valppto" + $keyMes).val(final[index].replace(/[$,]/g, ''));
+            $("#valppto" + $keyMes).val(final[index].replace(/[$,]/g, '').trim());
         }
     }
     FnSumaCampos();
