@@ -57,6 +57,7 @@
                             <hr>
                             <div class="row">
                                 <input type="hidden" name="keyPTTO" id="keyPTTO">
+                                <input type="hidden" name="nameExcel" id="nameExcel">
                                 <div class="col-4"><strong>Centro de Costos: </strong><p id="centroCostos"></p></div>
                                 <div class="col-4"><strong>Empresa: </strong><p id="empresa"></p></div>
                                 <div class="col-4"><strong>Año: </strong><p id="anio"></p></div>

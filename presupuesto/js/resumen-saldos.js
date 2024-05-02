@@ -23,6 +23,7 @@ function FnDetallePTTO($keyPTTO) {
             $('#centroCostos').html(centrocostos);
             $('#empresa').html(empresa);
             $('#anio').html(anio);
+            $('#nameExcel').val(centrocostos.trim() + '_' + empresa.trim() + '_' + anio.trim());
             $("#divTablaResumen").show("slow");
             $('html, body').animate({
                 scrollTop: $("#divTablaResumen").offset().top

@@ -3,11 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.tablaimportesppto = function (datos) {
 
-        console.log(datos);
-
         if (datos != '') {
             if (!$.fn.DataTable.isDataTable('#datatables-importesppto')) {
-                
+
                 // Si DataTables no está aplicado, inicialízalo
                 var tables = $("#datatables-importesppto").DataTable({
                     "ajax": {
@@ -46,8 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         { "data": "pttodiciembre" },
                         { "data": "acciones" },
                     ],
-                    scrollX: true, scrollCollapse: true,fixedColumns: {
-                        leftColumns : 3
+                    scrollX: true, scrollCollapse: true, fixedColumns: {
+                        leftColumns: 3
                     },
                     "language": {
                         "lengthMenu": "Mostrar " + "<select class='custom-select custom-select-sm form-control form-control-sm'><option value='10' >10</option><option value='25'>25</option><option value='50'>50</option><option value='100'>100</option><option value='-1'>All</option></select>" + " registros por página",
@@ -59,8 +57,18 @@ document.addEventListener("DOMContentLoaded", function () {
                             'next': "Siguiente",
                             'previous': "Anterior"
                         }
-                    }
-
+                    },
+                    "dom": 'Bfrtip',
+                    "buttons": [
+                        {
+                            "extend": 'excelHtml5',
+                            "text": 'Exportar a Excel',
+                            filename: function () {
+                                var nombre = $('#nameExcel').val();
+                                return nombre;
+                            }
+                        }
+                    ]
                 });
             } else {
                 $("#datatables-importesppto").DataTable().ajax.reload({

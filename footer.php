@@ -207,12 +207,14 @@
 <script src="/gacf-web-mexico/assets/vendor/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
 <script src="/gacf-web-mexico/assets/vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
 <script src="/gacf-web-mexico/assets/vendor/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
-<script src="/gacf-web-mexico/assets/vendor/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="/gacf-web-mexico/assets/vendor/datatables.net-buttons/js/buttons.html5.min.js"></script> 
 <script src="/gacf-web-mexico/assets/vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
 <script src="/gacf-web-mexico/assets/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
 <script src="/gacf-web-mexico/assets/vendor/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
 <script src="/gacf-web-mexico/assets/vendor/datatables.net-select/js/dataTables.select.min.js"></script>
 <script src="https://cdn.datatables.net/fixedcolumns/3.2.2/js/dataTables.fixedColumns.min.js"></script>
+<script src="/gacf-web-mexico/assets/vendor/jszip/3.1.3/jszip.min.js"></script>
+<!-- <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script> -->
 <!-- Datatable Demo Aapp js -->
 <script src="/gacf-web-mexico/assets/js/pages/demo.datatable-init.js"></script>
 
