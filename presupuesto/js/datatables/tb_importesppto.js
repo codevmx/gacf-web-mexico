@@ -62,6 +62,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     "buttons": [
                         {
                             "extend": 'excelHtml5',
+                            "messageTop":function () {
+                                var nombre = $('#nameExcel').val();
+                                return nombre;
+                            },
                             "text": 'Exportar a Excel',
                             filename: function () {
                                 var nombre = $('#nameExcel').val();
